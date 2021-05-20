@@ -9,15 +9,13 @@ let applicationState = {
         displayFavorites: false,
         displayMessages: false
     },
+
     users: [],
     posts: [],
     likes: [],
     messages: [],
     follows: []
 }
-
-
-
 
 
 export const fetchPosts = () => {
@@ -30,4 +28,20 @@ export const fetchPosts = () => {
 
 export const getPosts = () => {
     return [...applicationState.posts]
+}
+
+
+export const fetchUsers = () => {
+    return fetch(`${apiURL}/users`)
+    .then(response => response.json())
+    .then(
+        (user) => {
+            applicationState.users = user
+        }
+    )
+}
+
+
+export const getUsers = () => {
+    return [...applicationState.users]
 }
