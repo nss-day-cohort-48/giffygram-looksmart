@@ -10,3 +10,16 @@ const applicationState = {
         displayMessages: false
     }
 }
+
+
+export const fetchLikes = () => {
+    return fetch("${API}/likes")
+    .then(response => response.json())
+    .then(likes =>{
+        applicationState.likes = likes
+    })
+}
+
+export const getlikes = () => {
+    return [...applicationState.likes]
+}
