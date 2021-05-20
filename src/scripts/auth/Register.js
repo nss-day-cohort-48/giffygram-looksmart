@@ -71,8 +71,8 @@ document.addEventListener("click", clickEvent => {
                 }
 
                 sendUserToDatabase(newUser)
-                alert("Congratulations for signing up!")
-                document.querySelector(".giffygram").innerHTML = GiffyGram()
+                alert("Congratulations for signing up! Please log in.")
+                document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
                 return
             }
         }
