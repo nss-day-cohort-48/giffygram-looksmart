@@ -1,3 +1,5 @@
+import { PostList } from "../scripts/feed/PostList.js"
+
 export const GiffyGram = () => {
 
     // Show main main UI
@@ -12,9 +14,12 @@ export const GiffyGram = () => {
     <section class="MessageForm">
     
     </section>
+    <section class="PostEntry">
+    
+    </section>
 
     <section class="PostList">
-
+   ${PostList()}
     </section>
 
     <section class="Footer">
