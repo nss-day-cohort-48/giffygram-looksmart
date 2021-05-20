@@ -65,9 +65,28 @@ export const getPosts = () => {
     return [...applicationState.posts]
 }
 
+//Setter function for new posts
+export const sendGif = (userGifSubmission) => {
+    const fetchOptions = {
+        method:"POST", 
+        headers: { 
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userGifSubmission) 
+    }
+    return fetch(`${API}/posts`, fetchOptions)
+    .then(res => res.json()) 
+    .then(() => {
+        mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+    })
+}
+
+
 
 export const fetchLikes = () => {
+
     return fetch(`${apiURL}/likes`)
+
     .then(response => response.json())
     .then(likes =>{
         applicationState.likes = likes
@@ -90,4 +109,21 @@ export const fetchMessages = () => {
     )
 }
 export const getMessages = () => {
+
+
     return[...applicationState.messages]
+}
+
+export const fetchFollows = () => {
+    return fetch(`${apiURL}/follows`)
+    .then(response => response.json())
+    .then(
+        (follow) => {
+            applicationState.follows = follow
+        }
+    )
+}
+
+export const getFollows = () => {
+    return[...applicationState.follows]
+}
