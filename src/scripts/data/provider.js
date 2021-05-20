@@ -65,6 +65,23 @@ export const getPosts = () => {
     return [...applicationState.posts]
 }
 
+//Setter function for new posts
+export const sendGif = (userGifSubmission) => {
+    const fetchOptions = {
+        method:"POST", 
+        headers: { 
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userGifSubmission) 
+    }
+    return fetch(`${API}/posts`, fetchOptions)
+    .then(res => res.json()) 
+    .then(() => {
+        mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+    })
+}
+
+
 
 export const fetchLikes = () => {
     return fetch(`${apiURL}/likes`)
