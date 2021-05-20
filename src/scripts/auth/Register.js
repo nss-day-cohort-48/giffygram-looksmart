@@ -1,4 +1,5 @@
 import { getUsers, sendUserToDatabase } from "../data/provider.js"
+import { GiffyGram } from "../GiffyGram.js"
 
 export const registrationForm = () => {
     return `
@@ -71,6 +72,8 @@ document.addEventListener("click", clickEvent => {
 
                 sendUserToDatabase(newUser)
                 alert("Congratulations for signing up!")
+                document.querySelector(".giffygram").innerHTML = GiffyGram()
+                return
             }
         }
     }
