@@ -21,7 +21,7 @@ export const getUsers = () => {
 }
 
 export const fetchPosts = () => {
-    return fetch("${API}/posts")
+    return fetch(`${apiUrl}/posts`)
     .then(response => response.json())
     .then(posts =>{
         applicationState.posts = posts
@@ -34,7 +34,7 @@ export const getPosts = () => {
 
 
 export const fetchLikes = () => {
-    return fetch("${API}/likes")
+    return fetch(`${apiURL}}/likes`)
     .then(response => response.json())
     .then(likes =>{
         applicationState.likes = likes
@@ -58,21 +58,4 @@ export const fetchMessages = () => {
 }
 export const getMessages = () => {
     return[...applicationState.messages]
-
-
-export const getUsers = () => {
-    return [...applicationState.users]
-}
-
-// fetch call to access POSTS database in the API
-export const fetchPosts = () => {
-    return fetch(`${apiURL}/posts`)
-    .then(response => response.json())
-    .then(posts =>{
-        applicationState.posts = posts
-    })
-}
-
-export const getPosts = () => {
-    return [...applicationState.posts]
 }
