@@ -45,3 +45,16 @@ export const fetchUsers = () => {
 export const getUsers = () => {
     return [...applicationState.users]
 }
+
+export const fetchMessages = () => {
+    return fetch(`${apiURL}/messages`)
+    .then(response => response.json())
+    .then(
+        (message) => {
+            applicationState.messages = message
+        }
+    )
+}
+export const getMessages = () => {
+    return[...applicationState.messages]
+}
