@@ -13,6 +13,11 @@ let applicationState = {
 
 
 
+
+export const getUsers = () => {
+    return [...applicationState.users]
+}
+
 export const fetchPosts = () => {
     return fetch("${API}/posts")
     .then(response => response.json())
@@ -37,3 +42,18 @@ export const fetchLikes = () => {
 export const getlikes = () => {
     return [...applicationState.likes]
 }
+
+
+
+export const fetchMessages = () => {
+    return fetch(`${apiURL}/messages`)
+    .then(response => response.json())
+    .then(
+        (message) => {
+            applicationState.messages = message
+        }
+    )
+}
+export const getMessages = () => {
+    return[...applicationState.messages]
+
