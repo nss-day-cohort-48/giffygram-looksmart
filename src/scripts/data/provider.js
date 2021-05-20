@@ -67,7 +67,9 @@ export const getPosts = () => {
 
 
 export const fetchLikes = () => {
+
     return fetch(`${apiURL}/likes`)
+
     .then(response => response.json())
     .then(likes =>{
         applicationState.likes = likes
@@ -90,4 +92,20 @@ export const fetchMessages = () => {
     )
 }
 export const getMessages = () => {
+
     return[...applicationState.messages]
+}
+
+export const fetchFollows = () => {
+    return fetch(`${apiURL}/follows`)
+    .then(response => response.json())
+    .then(
+        (follow) => {
+            applicationState.follows = follow
+        }
+    )
+}
+
+export const getFollows = () => {
+    return[...applicationState.follows]
+}
