@@ -7,7 +7,7 @@ export const registrationForm = () => {
             Not a member?
             </div>
 
-            <button id="registrationButton>Register here!</button>
+            <button id="registrationButton">Register here!</button>
 
         </div>
     `
@@ -66,11 +66,11 @@ document.addEventListener("click", clickEvent => {
                 "name": userName,
                 "email": email,
                 "password": password,
-                "id": parseInt(newUserId)
+                "id": newUserId
                 }
 
                 sendUserToDatabase(newUser)
-                alert("Congratulations on signing up!")
+                alert("Congratulations for signing up!")
             }
         }
     }
