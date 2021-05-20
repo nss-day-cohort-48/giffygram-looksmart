@@ -30,11 +30,9 @@ export const getUsers = () => {
     return [...applicationState.users]
 }
 
-export const setUser = (user) => {
-    applicationState.currentUser.id = user.id
-    applicationState.currentUser.name = user.name
-    applicationState.currentUser.email = user.email
-}
+
+
+
 // post call to add new user to database
 export const sendUserToDatabase = (newUser) => {
     const fetchOptions = {
