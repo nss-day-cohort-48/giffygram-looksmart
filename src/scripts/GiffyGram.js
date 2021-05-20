@@ -1,3 +1,5 @@
+import { footer } from "../scripts/nav/Footer.js"
+
 export const GiffyGram = () => {
 
     // Show main main UI
@@ -18,7 +20,7 @@ export const GiffyGram = () => {
     </section>
 
     <section class="Footer">
-    
+        ${footer()}
     </section>
 
 
