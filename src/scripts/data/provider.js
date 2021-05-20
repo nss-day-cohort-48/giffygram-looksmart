@@ -8,9 +8,11 @@ let applicationState = {
         chosenUser: null,
         displayFavorites: false,
         displayMessages: false
-    },
+    }
 }
 
+
+// fetch call to access USER databse in API
 
 
 
@@ -57,3 +59,20 @@ export const fetchMessages = () => {
 export const getMessages = () => {
     return[...applicationState.messages]
 
+
+export const getUsers = () => {
+    return [...applicationState.users]
+}
+
+// fetch call to access POSTS database in the API
+export const fetchPosts = () => {
+    return fetch(`${apiURL}/posts`)
+    .then(response => response.json())
+    .then(posts =>{
+        applicationState.posts = posts
+    })
+}
+
+export const getPosts = () => {
+    return [...applicationState.posts]
+}
