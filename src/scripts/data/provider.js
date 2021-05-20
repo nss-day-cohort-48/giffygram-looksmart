@@ -9,14 +9,14 @@ let applicationState = {
         displayFavorites: false,
         displayMessages: false
     },
-
-    users: [],
-    posts: [],
-    likes: [],
-    messages: [],
-    follows: []
 }
 
+
+
+
+export const getUsers = () => {
+    return [...applicationState.users]
+}
 
 export const fetchPosts = () => {
     return fetch("${API}/posts")
@@ -31,20 +31,19 @@ export const getPosts = () => {
 }
 
 
-export const fetchUsers = () => {
-    return fetch(`${apiURL}/users`)
+export const fetchLikes = () => {
+    return fetch("${API}/likes")
     .then(response => response.json())
-    .then(
-        (user) => {
-            applicationState.users = user
-        }
-    )
+    .then(likes =>{
+        applicationState.likes = likes
+    })
+}
+
+export const getlikes = () => {
+    return [...applicationState.likes]
 }
 
 
-export const getUsers = () => {
-    return [...applicationState.users]
-}
 
 export const fetchMessages = () => {
     return fetch(`${apiURL}/messages`)
@@ -57,4 +56,4 @@ export const fetchMessages = () => {
 }
 export const getMessages = () => {
     return[...applicationState.messages]
-}
+
