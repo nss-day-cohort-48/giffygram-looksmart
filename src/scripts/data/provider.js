@@ -1,7 +1,6 @@
 const apiURL = "http://localhost:8088"
 const applicationElement = document.querySelector(".giffygram")
 
-
 let applicationState = {
     currentUser: {},
     feed: {
@@ -15,7 +14,6 @@ let applicationState = {
     messages: []
 }
 
-
 // fetch call to access USER database in API
 export const fetchUsers = () => {
     return fetch (`${apiURL}/users`)
@@ -25,13 +23,9 @@ export const fetchUsers = () => {
     })
 }
 
-
 export const getUsers = () => {
     return [...applicationState.users]
 }
-
-
-
 
 // post call to add new user to database
 export const sendUserToDatabase = (newUser) => {
@@ -49,7 +43,20 @@ export const sendUserToDatabase = (newUser) => {
     })
 }
 
-
+export const sendMessageToDatabase = (message) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(message)
+    }
+    return fetch(`${apiURL}/messages`, fetchOptions)
+    .then(response => response.json())
+    .then(() => {
+        applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
+    })
+}
 
 export const fetchPosts = () => {
     return fetch(`${apiURL}/posts`)
@@ -111,9 +118,6 @@ export const sendFavorite = (userPostFavorite) => {
     })
 }
 
-
-
-
 export const fetchMessages = () => {
     return fetch(`${apiURL}/messages`)
     .then(response => response.json())
@@ -123,9 +127,8 @@ export const fetchMessages = () => {
         }
     )
 }
+
 export const getMessages = () => {
-
-
     return[...applicationState.messages]
 }
 
