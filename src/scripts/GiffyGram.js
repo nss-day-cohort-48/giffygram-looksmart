@@ -2,6 +2,7 @@ import { NavBar } from "./nav/NavBar.js"
 import { PostList } from "../scripts/feed/PostList.js"
 import { footer } from "../scripts/nav/Footer.js"
 import { postButton } from "./feed/Post.js"
+import { messageBox } from "./friends/DirectMessage.js"
 
 
 export const GiffyGram = () => {
@@ -10,7 +11,8 @@ export const GiffyGram = () => {
     return `
     
     ${NavBar()}
-  
+    ${messageBox()}
+
     ${postButton()}
 
 

@@ -23,14 +23,6 @@ document.addEventListener("click", clickEvent => {
     }
 })
 
-// document.addEventListener("change", changeEvent => {
-//     let recipientId = 0
-    
-//     if (changeEvent.target.id === "recipientSelection") {
-//         recipientId = changeEvent.target.value
-//         alert(`${recipientId}`)
-//     }
-// })
 
 document.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "sendMessage") {
