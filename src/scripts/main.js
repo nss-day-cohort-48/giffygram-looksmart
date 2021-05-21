@@ -26,3 +26,5 @@ applicationElement.addEventListener(
         renderApp()
     }
 )
+
+renderApp()

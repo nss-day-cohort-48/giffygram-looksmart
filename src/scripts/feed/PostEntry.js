@@ -1,4 +1,4 @@
-import { sendGif } from "./auth/provider.js"
+import { sendGif } from "./data/provider.js"
 
 
 const mainContainer = document.querySelector("#giffygram")
@@ -38,4 +38,7 @@ export const PostEntry = () => {
 <button class="button" id="submitGif">Save Gif</button>
 <button class="button" id="cancelGif">Cancel Gif</button>
     `
+
+return html
+
 }
