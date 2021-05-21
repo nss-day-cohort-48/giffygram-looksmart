@@ -36,15 +36,17 @@ mainContainer.addEventListener(
 
 export const footer = () => {
     return`
+    <section class="Footer">
     <footer class="footer">
     <div class="yearSelect flexboxFooter footer__item">
+
     <p>Post since</p>
     <select id="years" value="">
             <option id="year21" name='footerYear' value=“2021”>2021</option>
             <option id="year20" name='footerYear' value=“2020”>2020</option>
             <option id="year19" name='footerYear' value=“2019”>2019</option>
             <option id="year18" name='footerYear' value=“2018”>2018</option>
-            </select>
+    </select>
     </div>
     <div class="usersInFooter footer__item">
     <p>Posts by user</p>
@@ -55,6 +57,7 @@ export const footer = () => {
     ${footerFavorites()}
     </div>
     </footer>
+    </section>
             `
 }
 

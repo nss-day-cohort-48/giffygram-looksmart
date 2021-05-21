@@ -1,6 +1,7 @@
 import { NavBar } from "./nav/NavBar.js"
 import { PostList } from "../scripts/feed/PostList.js"
 import { footer } from "../scripts/nav/Footer.js"
+import { postButton } from "./feed/Post.js"
 
 
 export const GiffyGram = () => {
@@ -9,30 +10,16 @@ export const GiffyGram = () => {
     return `
     
     ${NavBar()}
-    
-    <h1>Giffygram</h1>
-    
-    <section class="Header">
+  
+    ${postButton()}
 
-    <div class="DirectMessage"></div>
-    
-    </section>
 
-    <section class="MessageForm">
-    
-    </section>
-    <section class="PostEntry">
-    
-    </section>
-
-    <section class="PostList">
-   ${PostList()}
+    <section>
+    ${PostList()}
     </section>
 
     <section class="Footer">
-        ${footer()}
+    ${footer()}
     </section>
-
-
     `
 }
