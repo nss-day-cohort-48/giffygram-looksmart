@@ -1,4 +1,4 @@
-import { getMessages } from "../data/provider.js"
+import { getMessages, getUsers } from "../data/provider.js"
 
 export const messageBox = () => {
     return `<div class="messageBox">
@@ -29,8 +29,18 @@ export const receivedMessages = () => {
 }
 
 const inboxList = (message) => {
+    const usersArray = getUsers()
+
+    let senderName = "..."
+
+    for (let i = 0; i < usersArray.length; i++) {
+        if (usersArray[i].id === message.userId) {
+            senderName = usersArray[i].name
+        }
+    }
+
     return `
-    <li>${message.userId}: ${message.text}</li>
+    <li>${senderName}: ${message.text}</li>
     `
 }
 
