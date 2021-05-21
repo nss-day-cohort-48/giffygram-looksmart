@@ -119,6 +119,11 @@
       "userId": 1,
       "postId": 4,
       "id": 8
+    },
+    {
+      "postId": 1,
+      "userId": 4,
+      "id": 9
     }
   ],
   "messages": [
@@ -213,6 +218,13 @@
       "recipientId": 2,
       "read": false,
       "id": 14
+    },
+    {
+      "userId": 4,
+      "text": "hi",
+      "recipientId": 4,
+      "read": false,
+      "id": 15
     }
   ],
   "follows": [

@@ -12,19 +12,30 @@ export const receivedMessages = () => {
     const inbox = []
 
     for (let i = 0; i < messagesArray.length; i++) {
-        if (messagesArray[i].userId === userId) {
+        if (messagesArray[i].recipientId === userId) {
             inbox.push(messagesArray[i])
         }
     }
     
-    return `<h1>Your DMs</h1>
-        ${inboxList()}        
+    return `<div> 
+    <h1>Your DMs</h1>
+    <ul>
+    ${inbox.map(inboxList).join("\n")}
+    </ul>
+
+    <button id="closeMessageBox">Close</button>
+    <div>
     `
 }
 
-const inboxList = () => {
-    return `<ul>
-    <li>Message</li>
-    </ul>
+const inboxList = (message) => {
+    return `
+    <li>${message.userId}: ${message.text}</li>
     `
 }
+
+document.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "closeMessageBox") {
+        document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
+    }
+})
