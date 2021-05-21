@@ -18,6 +18,8 @@ export const renderApp = () => {
     )
 }
 
+renderApp()
+
 applicationElement.addEventListener(
     "stateChanged",
     CustomEvent => {
