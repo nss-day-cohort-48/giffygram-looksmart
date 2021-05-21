@@ -10,6 +10,7 @@ export const PostList = () => {
 
     const listPosts = posts.map(
         post => {
+
             let newDate = post.timestamp;
             let upDate = new Date(newDate).toLocaleDateString(`en-US`);
 
