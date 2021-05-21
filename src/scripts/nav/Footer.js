@@ -7,9 +7,9 @@ const mainContainer = document.querySelector(".giffygram")
 mainContainer.addEventListener(
     "change",
     (event) => {
-        //add details after target/ .name cant be the correct target.
-        if (event.target.name === "") {
-            //add the set export to this
+            if (event.target.id === "year21") {
+                document.getElementById("year21")
+                alert("2021")
             }
         }
     )
@@ -18,36 +18,35 @@ mainContainer.addEventListener(
     mainContainer.addEventListener(
         "change",
         (event) => {
-            if(event.target.name === "") {
-                //add the set export to this
+            if(event.target.id === "footerUsers") {
+                
             }
         }
     )
 
-    // change eventListener for show only favorites section
+    // click eventListener for show only favorites section
     mainContainer.addEventListener(
-        "change",
+        "click",
         (event) => {
-            if(event.target.name === "") {
+            if(event.target.id === "favoritesInFooter") {
+                alert ("Hello World!!!")
             }
         }
     )
-//will we have to make a year section in provider.js?
-//function for since year html need a .map to filter through years.
-//function for html of post by user need a .map to filter through names of users.
-//put flexbox on each input to make them look like a footer
+
 export const footer = () => {
     return`
     <section class="Footer">
     <footer class="footer">
     <div class="yearSelect flexboxFooter footer__item">
-    <p>Posts since</p>
-    <select value="">
-            <option value=“2021”>2021</option>
-            <option value=“2020”>2020</option>
-            <option value=“2019”>2019</option>
-            <option value=“2018”>2018</option>
-            </select>
+
+    <p>Post since</p>
+    <select id="years" value="">
+            <option id="year21" name='footerYear' value=“2021”>2021</option>
+            <option id="year20" name='footerYear' value=“2020”>2020</option>
+            <option id="year19" name='footerYear' value=“2019”>2019</option>
+            <option id="year18" name='footerYear' value=“2018”>2018</option>
+    </select>
     </div>
     <div class="usersInFooter footer__item">
     <p>Posts by user</p>
@@ -69,7 +68,7 @@ const footerUsers = () => {
     ${users.map(
         user => {
             return `
-            <option id="${user.id}">${user.name}</option>
+            <option id=" userInFooter ${user.id}">${user.name}</option>
             `
         }
     )}
@@ -78,8 +77,7 @@ const footerUsers = () => {
 
 const footerFavorites = () => {
     //need a const something
-    //input id needs to be defined
     return `
-    <input id="" type="checkbox">
+    <input id="favoritesInFooter" type="checkbox">
     `
 }

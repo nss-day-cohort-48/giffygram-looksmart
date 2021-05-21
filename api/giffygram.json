@@ -1,4 +1,3 @@
-
 {
   "users": [
     {
@@ -36,6 +35,24 @@
       "name": "Emily Lemmon",
       "email": "emily@lemmon.com",
       "password": "emily"
+    },
+    {
+      "name": "Alexander Lambrow",
+      "email": "alexander.lambrow@gmail.com",
+      "password": "",
+      "id": 18
+    },
+    {
+      "name": "Alexander Lambrow",
+      "email": "alexander.lambrow@gmail.com",
+      "password": "",
+      "id": 8
+    },
+    {
+      "name": "Alexander Lambrow",
+      "email": "alexander.lambrow@gmail.com",
+      "password": "",
+      "id": 9
     }
   ],
   "posts": [
