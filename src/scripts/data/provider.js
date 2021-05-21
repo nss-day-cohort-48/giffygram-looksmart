@@ -1,7 +1,6 @@
 const apiURL = "http://localhost:8088"
 const applicationElement = document.querySelector(".giffygram")
 
-
 let applicationState = {
     currentUser: {},
     feed: {
@@ -15,7 +14,6 @@ let applicationState = {
     messages: []
 }
 
-
 // fetch call to access USER database in API
 export const fetchUsers = () => {
     return fetch (`${apiURL}/users`)
@@ -25,13 +23,9 @@ export const fetchUsers = () => {
     })
 }
 
-
 export const getUsers = () => {
     return [...applicationState.users]
 }
-
-
-
 
 // post call to add new user to database
 export const sendUserToDatabase = (newUser) => {
@@ -49,7 +43,6 @@ export const sendUserToDatabase = (newUser) => {
     })
 }
 
-
 export const sendMessageToDatabase = (message) => {
     const fetchOptions = {
         method: "POST",
@@ -64,7 +57,6 @@ export const sendMessageToDatabase = (message) => {
         applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
     })
 }
-
 
 export const fetchPosts = () => {
     return fetch(`${apiURL}/posts`)
@@ -87,10 +79,10 @@ export const sendGif = (userGifSubmission) => {
         },
         body: JSON.stringify(userGifSubmission) 
     }
-    return fetch(`${API}/posts`, fetchOptions)
+    return fetch(`${apiURL}/posts`, fetchOptions)
     .then(res => res.json()) 
     .then(() => {
-        mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+        applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
     })
 }
 
@@ -106,8 +98,24 @@ export const fetchLikes = () => {
     })
 }
 
-export const getlikes = () => {
+export const getLikes = () => {
     return [...applicationState.likes]
+}
+
+//setter function for favoriting posts
+export const sendFavorite = (userPostFavorite) => {
+    const fetchOptions = {
+        method:"POST", 
+        headers: { 
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userPostFavorite)
+    }
+    return fetch(`${apiURL}/likes`, fetchOptions)
+    .then(res => res.json()) 
+    .then(() => {
+        applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
+    })
 }
 
 export const fetchMessages = () => {

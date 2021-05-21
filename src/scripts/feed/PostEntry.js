@@ -19,6 +19,16 @@ import { sendGif } from "../data/provider.js"
 //     }
 // })
 
+//        const dataToSendToAPI = {
+//            gifTitle: usergifTitle,
+//            gifURL: usergifURL,
+//            gifStory: usergifStory,
+//        }
+//        sendGif(dataToSendToAPI)
+//    }
+// })
+
+
 
 export const PostEntry = () => {
     let html = `
