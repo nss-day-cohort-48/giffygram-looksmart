@@ -1,3 +1,4 @@
+import { NavBar } from "./nav/NavBar.js"
 import { PostList } from "../scripts/feed/PostList.js"
 import { footer } from "../scripts/nav/Footer.js"
 
@@ -5,7 +6,11 @@ import { footer } from "../scripts/nav/Footer.js"
 export const GiffyGram = () => {
 
     // Show main main UI
-    return `<h1>Giffygram</h1>
+    return `
+    
+    ${NavBar()}
+    
+    <h1>Giffygram</h1>
     
     <section class="Header">
 
