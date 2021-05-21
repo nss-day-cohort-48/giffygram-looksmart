@@ -10,6 +10,20 @@ document.addEventListener("click", clickEvent => {
         const email = document.querySelector("input[name='email']").value
         const password = document.querySelector("input[name='password']").value
 
+        if (email === "") {
+            const inputField = document.querySelector(".user_email")
+            inputField.style.background = "#fc7878"
+            alert("Please input data in all fields")
+            return
+        }
+
+        if (password === "") {
+            const inputField = document.querySelector(".user_password")
+            inputField.style.background = "#fc7878"
+            alert("Please input data in all fields")
+            return
+        }
+
         for (const user of userState) {
             if (user.email === email && user.password === password) {
                 foundUser = user
@@ -29,11 +43,11 @@ export const LoginForm = () => {
             <form>
                 <fieldset>
                     <label for="email">Email:</label>
-                    <input type="text" name="email" autofocus placeholder="Email address" />
+                    <input type="text" class="user_email" name="email" autofocus placeholder="Email address" />
                 </fieldset>
                 <fieldset>
                     <label for="password">Password:</label>
-                    <input type="password" name="password" placeholder="Password" />
+                    <input type="password" class="user_password" name="password" placeholder="Password" />
                 </fieldset>
             </form>
             <button id="loginButton">Login</button>
