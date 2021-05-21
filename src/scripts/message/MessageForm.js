@@ -1,15 +1,15 @@
-import { getUsers } from "../data/provider.js"
+import { getUsers, sendMessageToDatabase } from "../data/provider.js"
 
 // input form for recipientId and text
 export const createMessageForm = () => {
     return `
         <div class="createMessage">
             <button id="closeMessageWindow">Close</button>
-            <select name="recipientSelection">
+            <select id="recipientSelection">
                 ${recipientSelectionList()}
             </select>
             <div class="field">
-                <input type="text" name="messageText" class="input" placeholder="Message body"/>
+                <input type="text" name="messageText" class="textBodyInput" placeholder="Message body"/>
             </div>
             <button id="sendMessage">Send</button>
             <button id="cancelMessage">Cancel</button>
@@ -23,10 +23,28 @@ document.addEventListener("click", clickEvent => {
     }
 })
 
-document.addEventListener("change", changeEvent => {
-    if (changeEvent.target.name === "recipientSelection") {
-        const recipientId = changeEvent.target.value
-        alert(`${recipientId}`)
+// document.addEventListener("change", changeEvent => {
+//     let recipientId = 0
+    
+//     if (changeEvent.target.id === "recipientSelection") {
+//         recipientId = changeEvent.target.value
+//         alert(`${recipientId}`)
+//     }
+// })
+
+document.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "sendMessage") {
+        const recipientId = parseInt(document.querySelector("#recipientSelection").value)
+        const textBody = document.querySelector(".textBodyInput").value
+        const userId = parseInt(localStorage.getItem("gg_user"))
+
+        const messageObject = {
+            userId: userId,
+            text: textBody,
+            recipientId: recipientId,
+            read: false
+        }
+        sendMessageToDatabase(messageObject)
     }
 })
 
