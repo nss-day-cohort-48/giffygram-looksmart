@@ -1,7 +1,7 @@
-import { sendGif } from "./data/provider.js"
+import { sendGif } from "../data/provider.js"
 
 
-const mainContainer = document.querySelector("#giffygram")
+/*const mainContainer = document.querySelector("#giffygram")
 
 mainContainer.addEventListener("click", clickEvent => {
     if(clickEvent.target.id === "submitGif") {
@@ -17,7 +17,7 @@ mainContainer.addEventListener("click", clickEvent => {
         }
         sendGif(dataToSendToAPI)
     }
-})
+})*/
 
 
 export const PostEntry = () => {

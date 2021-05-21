@@ -72,10 +72,10 @@ export const sendGif = (userGifSubmission) => {
         },
         body: JSON.stringify(userGifSubmission) 
     }
-    return fetch(`${API}/posts`, fetchOptions)
+    return fetch(`${apiURL}/posts`, fetchOptions)
     .then(res => res.json()) 
     .then(() => {
-        mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+        applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
     })
 }
 
@@ -91,9 +91,26 @@ export const fetchLikes = () => {
     })
 }
 
-export const getlikes = () => {
+export const getLikes = () => {
     return [...applicationState.likes]
 }
+
+//setter function for favoriting posts
+export const sendFavorite = (userPostFavorite) => {
+    const fetchOptions = {
+        method:"POST", 
+        headers: { 
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userPostFavorite)
+    }
+    return fetch(`${apiURL}/likes`, fetchOptions)
+    .then(res => res.json()) 
+    .then(() => {
+        applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
+    })
+}
+
 
 
 
