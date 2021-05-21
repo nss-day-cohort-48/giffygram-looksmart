@@ -1,4 +1,6 @@
 import { PostList } from "../scripts/feed/PostList.js"
+import { footer } from "../scripts/nav/Footer.js"
+
 
 export const GiffyGram = () => {
 
@@ -23,7 +25,7 @@ export const GiffyGram = () => {
     </section>
 
     <section class="Footer">
-    
+        ${footer()}
     </section>
 
 git
