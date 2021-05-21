@@ -1,4 +1,12 @@
-.miniMode {
+#postButton {
+    margin: 5rem;
+}
+
+.newPost {
+    margin: 5rem;
+}
+
+/* .miniMode {
     padding: 1rem;
     margin: 0 25%;
     border: 1px dashed slategrey;
@@ -71,4 +79,4 @@
 .post__remark {
     font-size: 2em;
     margin: 1em 0 0.5em 0;
-}
+} */

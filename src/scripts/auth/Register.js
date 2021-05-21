@@ -1,5 +1,4 @@
 import { getUsers, sendUserToDatabase } from "../data/provider.js"
-import { GiffyGram } from "../GiffyGram.js"
 
 export const registrationForm = () => {
     return `

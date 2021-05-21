@@ -38,9 +38,10 @@ mainContainer.addEventListener(
 //put flexbox on each input to make them look like a footer
 export const footer = () => {
     return`
+    <section class="Footer">
     <footer class="footer">
     <div class="yearSelect flexboxFooter footer__item">
-    <p>Post since</p>
+    <p>Posts since</p>
     <select value="">
             <option value=“2021”>2021</option>
             <option value=“2020”>2020</option>
@@ -57,6 +58,7 @@ export const footer = () => {
     ${footerFavorites()}
     </div>
     </footer>
+    </section>
             `
 }
 

@@ -1,5 +1,3 @@
-import { LoginForm } from "../auth/Login.js"
-
 export const NavBar = () => {
     return `
     <nav class="navigation">
