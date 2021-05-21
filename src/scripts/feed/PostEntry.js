@@ -1,23 +1,23 @@
-import { sendGif } from "./data/provider.js"
+import { sendGif } from "../data/provider.js"
 
 
-const mainContainer = document.querySelector("#giffygram")
+// const mainContainer = document.querySelector("#giffygram")
 
-mainContainer.addEventListener("click", clickEvent => {
-    if(clickEvent.target.id === "submitGif") {
+// mainContainer.addEventListener("click", clickEvent => {
+//     if(clickEvent.target.id === "submitGif") {
 
-        const usergifTitle = document.querySelector("input[name='gifTitle']").value
-        const usergifURL= document.querySelector("input[name='gifURL']").value
-        const usergifStory = document.querySelector("input[name='gifStory']").value
+//         const usergifTitle = document.querySelector("input[name='gifTitle']").value
+//         const usergifURL= document.querySelector("input[name='gifURL']").value
+//         const usergifStory = document.querySelector("input[name='gifStory']").value
 
-        const dataToSendToAPI = {
-            gifTitle: usergifTitle,
-            gifURL: usergifURL,
-            gifStory: usergifStory,
-        }
-        sendGif(dataToSendToAPI)
-    }
-})
+//         const dataToSendToAPI = {
+//             gifTitle: usergifTitle,
+//             gifURL: usergifURL,
+//             gifStory: usergifStory,
+//         }
+//         sendGif(dataToSendToAPI)
+//     }
+// })
 
 
 export const PostEntry = () => {
