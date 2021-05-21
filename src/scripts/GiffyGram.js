@@ -33,6 +33,6 @@ export const GiffyGram = () => {
         ${footer()}
     </section>
 
-git
+
     `
 }
