@@ -1,4 +1,4 @@
-import { getMessages, getUsers } from "../data/provider.js"
+import { getMessages, getUsers, deleteMessage } from "../data/provider.js"
 
 export const messageBox = () => {
     return `<div class="messageBox">
@@ -40,12 +40,21 @@ const inboxList = (message) => {
     }
 
     return `
-    <li>${senderName}: ${message.text}</li>
+    <div>${senderName}: ${message.text}
+    <button id="deleteMessage--${message.id}">delete</button>
+    </div>
     `
 }
 
 document.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "closeMessageBox") {
         document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
+    }
+})
+
+document.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteMessage--")) {
+        const [, messageId] = clickEvent.target.id.split("--")
+        deleteMessage(parseInt(messageId))
     }
 })

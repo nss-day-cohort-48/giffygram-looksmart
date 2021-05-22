@@ -145,3 +145,12 @@ export const fetchFollows = () => {
 export const getFollows = () => {
     return[...applicationState.follows]
 }
+
+export const deleteMessage = (id) => {
+    return fetch(`${apiURL}/messages/${id}`, { method: "DELETE"})
+        .then(
+            () => {
+                applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
+            }
+        )
+}
