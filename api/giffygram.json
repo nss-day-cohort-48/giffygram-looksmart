@@ -35,6 +35,12 @@
       "name": "Emily Lemmon",
       "email": "emily@lemmon.com",
       "password": "emily"
+    },
+    {
+      "name": "Alexander Lambrow",
+      "email": "alexander.lambrow@gmail.com",
+      "password": "poo",
+      "id": 7
     }
   ],
   "posts": [
@@ -69,21 +75,18 @@
       "userId": 2,
       "timestamp": 1617396786968,
       "id": 4
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 1,
-      "timestamp": 1621534541361,
-      "id": 5
     }
   ],
   "likes": [
     {
-      "id": 2,
-      "userId": 3,
+      "id": 1,
+      "userId": 1,
       "postId": 2
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "postId": 1
     },
     {
       "userId": 1,
@@ -106,95 +109,24 @@
       "id": 8
     },
     {
-      "Id": 1,
+      "postId": 1,
+      "userId": 4,
       "id": 9
     },
     {
-      "Id": 1,
+      "postId": 3,
+      "userId": 1,
       "id": 10
     },
     {
-      "Id": 1,
+      "postId": 2,
+      "userId": 1,
       "id": 11
     },
     {
-      "Id": 1,
+      "postId": 4,
+      "userId": 1,
       "id": 12
-    },
-    {
-      "id": "2021-05-21T19:34:33.110Z",
-      "postId": 1,
-      "userId": 1
-    },
-    {
-      "id": "2021-05-21T19:35:05.832Z",
-      "postId": 2,
-      "userId": 1
-    },
-    {
-      "postId": 4,
-      "userId": 1,
-      "id": 13
-    },
-    {
-      "postId": 3,
-      "userId": 1,
-      "id": 14
-    },
-    {
-      "postId": 3,
-      "userId": 1,
-      "id": 15
-    },
-    {
-      "postId": 3,
-      "userId": 1,
-      "id": 16
-    },
-    {
-      "postId": 4,
-      "userId": 1,
-      "id": 17
-    },
-    {
-      "postId": 3,
-      "userId": 1,
-      "id": 18
-    },
-    {
-      "postId": 1,
-      "userId": 1,
-      "id": 19
-    },
-    {
-      "postId": 3,
-      "userId": 1,
-      "id": 20
-    },
-    {
-      "postId": 1,
-      "userId": 1,
-      "id": 21
-    },
-    {
-      "postId": 4,
-      "userId": 1,
-      "id": 22
-    },
-    {
-      "postId": 4,
-      "userId": 1,
-      "id": 23
-    },
-    {
-      "postId": 1,
-      "userId": 1,
-      "id": 24
-    },
-    {
-      "postId": 2,
-      "userId": 1,
-      "id": 25
     }
   ],
   "messages": [
@@ -275,6 +207,27 @@
       "recipientId": 1,
       "message": "you cant hide from me",
       "id": 12
+    },
+    {
+      "userId": 4,
+      "text": "hi",
+      "recipientId": 2,
+      "read": false,
+      "id": 13
+    },
+    {
+      "userId": 4,
+      "text": "hi",
+      "recipientId": 2,
+      "read": false,
+      "id": 14
+    },
+    {
+      "userId": 4,
+      "text": "hi",
+      "recipientId": 3,
+      "read": false,
+      "id": 15
     }
   ],
   "follows": [

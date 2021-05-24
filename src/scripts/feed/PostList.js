@@ -12,8 +12,8 @@ export const PostList = () => {
     current user*/
     const likesInfo = likes.filter(like => {
         return (parseInt(localStorage.getItem("gg_user")) === like.userId)
-         
-    }    )
+
+    })
 
     let html = "<ul>"
 
@@ -27,14 +27,14 @@ export const PostList = () => {
             where the postId of the current user favorites is equal to the id 
             of the individual post*/
             const findFavorite = likesInfo.find(postLike => {
-                
+
                 return (postLike.postId === post.id)
             })
             /*if the postId of the user favorites != post.id, then display a blank star on the 
-            homepage, otherwise the user has already liked it so display a gold star*/ 
+            homepage, otherwise the user has already liked it so display a gold star*/
             const starImage = (findFavorite === undefined ? './images/favorite-star-blank.svg' : './images/favorite-star-yellow.svg')
             const altText = (findFavorite === undefined ? 'blank star' : 'yellow star')
-            
+
             /*for each post in the posts array(what we are mapping), return HTML to display 
             it's title, image, and description, as well as post details.*/
             return ` <li> <h2> ${post.title} </h2></li>            
@@ -45,15 +45,15 @@ export const PostList = () => {
                     return `<li> <div> Posted by ${user.name} on ${upDate} </div></li>`
                 }
             }).join("")
-        }
+                }
         <li> <img class="actionIcon" id="favoritePost--${post.id}" src=${starImage} alt=${altText} /></li>
         `
         })
 
-html += listPosts.join("")
-html += "</ul>"
+    html += listPosts.join("")
+    html += "</ul>"
 
-return html
+    return html
 }
 
 //const actionIcon = document.querySelector(".actionIcon")
@@ -61,16 +61,16 @@ return html
 
 mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("favoritePost--")) {
-        
+
         const [, postId] = clickEvent.target.id.split("--")
         const newFavorite = {
-            
+
             postId: parseInt(postId),
             userId: parseInt(localStorage.getItem("gg_user"))
         }
         sendFavorite(newFavorite)
         //alert(`Added to your Favorites`)
-    }     
+    }
 })
 
 
@@ -81,10 +81,13 @@ mainContainer.addEventListener("click", clickEvent => {
 
 
 /*eventListener to remove post from favorites
-mainContainer.addEventListener("click", clickEvent =>{
-    if (clickEvent.target.id.startsWith("favoritePost--") ) {
+mainContainer.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("favoritePost--")) {
+
         const [, postId] = clickEvent.target.id.split("--")
+
         favoriteDeleteRequest(parseInt(postId))
     }
 })
+
 */

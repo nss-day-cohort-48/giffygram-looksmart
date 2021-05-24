@@ -92,6 +92,7 @@ export const fetchLikes = () => {
 }
 
 export const getLikes = (id) => {
+    
     return [...applicationState.likes]
 }
 

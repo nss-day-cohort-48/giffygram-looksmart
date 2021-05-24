@@ -1,23 +1,8 @@
 import { sendGif } from "../data/provider.js"
 
 
-/*const mainContainer = document.querySelector("#giffygram")
+const mainContainer = document.querySelector("#giffygram")
 
-mainContainer.addEventListener("click", clickEvent => {
-    if(clickEvent.target.id === "submitGif") {
-
-        const usergifTitle = document.querySelector("input[name='gifTitle']").value
-        const usergifURL= document.querySelector("input[name='gifURL']").value
-        const usergifStory = document.querySelector("input[name='gifStory']").value
-
-        const dataToSendToAPI = {
-            gifTitle: usergifTitle,
-            gifURL: usergifURL,
-            gifStory: usergifStory,
-        }
-        sendGif(dataToSendToAPI)
-    }
-})*/
 
 
 export const PostEntry = () => {
@@ -42,3 +27,25 @@ export const PostEntry = () => {
 return html
 
 }
+
+document.addEventListener("click", clickEvent => {
+    if(clickEvent.target.id === "submitGif") {
+
+        const usergifTitle = document.querySelector("input[name='gifTitle']").value
+        const usergifURL= document.querySelector("input[name='gifURL']").value
+        const usergifStory = document.querySelector("input[name='gifStory']").value
+
+
+        let newDate = Date.now()
+        const userId = parseInt(localStorage.getItem("gg_user"))
+        let upDate = newDate.toLocaleDateString(`en-US`)
+
+        const dataToSendToAPI = {
+            title: usergifTitle,
+            imageURL: usergifURL,
+            description: usergifStory,
+            userId: userId
+        }
+        sendGif(dataToSendToAPI)
+    }
+})

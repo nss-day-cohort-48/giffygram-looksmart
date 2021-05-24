@@ -4,6 +4,7 @@ import { footer } from "../scripts/nav/Footer.js"
 import { postButton } from "./feed/Post.js"
 
 
+
 export const GiffyGram = () => {
 
     // Show main main UI
@@ -12,7 +13,7 @@ export const GiffyGram = () => {
     ${NavBar()}
   
     ${postButton()}
-
+    
 
     <section>
     ${PostList()}
