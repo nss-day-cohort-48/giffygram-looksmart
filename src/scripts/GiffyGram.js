@@ -6,10 +6,7 @@ import { messageBox } from "./friends/DirectMessage.js"
 
 
 export const GiffyGram = () => {
-
-    // Show main main UI
     return `
-    
     ${NavBar()}
     <section class="topFlex">
     ${postButton()}

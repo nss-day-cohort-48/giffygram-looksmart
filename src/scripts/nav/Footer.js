@@ -1,4 +1,4 @@
-import { getUsers, getPosts } from "../data/provider.js"
+import { getUsers, getPosts, getLikes } from "../data/provider.js"
 
 const mainContainer = document.querySelector(".giffygram")
 
@@ -8,25 +8,60 @@ mainContainer.addEventListener(
     "change",
     (event) => {
         if (event.target.name === "yearsDropdown") {
-            const postYearId = event.target.value
-            alert(`${postYearId}`)
+            const postingYear = parseInt(event.target.value)
+            document.querySelector("#postingWall").innerHTML = filterWallByYear(postingYear)
         }
     }
 )
-//Now get years and how would we go about this? somehow filter through time and grab certain ones.
-// const yearFunction = () => {
-//     const yearArray = getPosts()
-//     return `
-//             ${yearArray.map().join("")}`
-// }
 
-//change change eventlistener for post by section
-//same thing as above but for users not years
+const filterWallByYear = (postingYear) => {
+    const posts = getPosts()
+    const filteredPosts = []
+
+    for (let i = 0; i < posts.length; i++) {
+        if (posts[i].timestamp === postingYear) {
+            filteredPosts.push(posts[i])
+        }
+    }
+
+    const likes = getLikes()
+    const likesInfo = likes.filter(like => {
+        return (parseInt(localStorage.getItem("gg_user")) === like.userId)
+    })
+
+    let html = "<div>"
+    filteredPosts.map(
+        post => {
+
+            const findFavorite = likesInfo.find(postLike => {
+
+                return (postLike.postId === post.id)
+            })
+
+            const starImage = (findFavorite === undefined ? './images/favorite-star-blank.svg' : './images/favorite-star-yellow.svg')
+            const altText = (findFavorite === undefined ? 'blank star' : 'yellow star')
+
+
+            return `<h2> ${post.title} </h2>           
+            <img src=" ${post.imageURL}">
+            <div> ${post.description}</div>
+            <img class="actionIcon" id="favoritePost--${post.id}" src=${starImage} alt=${altText} />
+        `
+        }
+    )
+    html += filteredPosts.join("")
+    html += "</div>"
+
+    return html
+}
+
+// event listener for user filter dropdown
 mainContainer.addEventListener(
     "change",
     (event) => {
-        if (event.target.id === "footerNames") {
-            
+        if (event.target.name === "footerNames") {
+            const userId = parseInt(event.target.value)
+            alert(`${userId}`)
         }
     }
 )
@@ -46,19 +81,20 @@ export const footer = () => {
     <section class="Footer">
     <footer class="footer">
     <div class="yearSelect flexboxFooter footer__item">
-
     <p>Post since</p>
-    <select id="years" name="yearsDropdown"value="">
-            <option id="year21" name='footerYear' value=“2021”>2021</option>
-            <option id="year20" name='footerYear' value=“2020”>2020</option>
-            <option id="year19" name='footerYear' value=“2019”>2019</option>
-            <option id="year18" name='footerYear' value=“2018”>2018</option>
+    <select id="years" name="yearsDropdown">
+            <option id="year21" name='footerYear'>2021</option>
+            <option id="year20" name='footerYear'>2020</option>
+            <option id="year19" name='footerYear'>2019</option>
+            <option id="year18" name='footerYear'>2018</option>
     </select>
     </div>
+
     <div class="usersInFooter footer__item">
     <p>Posts by user</p>
     ${footerUsers()}
     </div>
+
     <div class="footerFavorites footer__item">
     <p class="favoritesText">Show only favorites</p>
     ${footerFavorites()}
@@ -71,13 +107,11 @@ export const footer = () => {
 const footerUsers = () => {
     const users = getUsers()
     return `
-    <select>
+    <select name="footerNames">
     ${users.map(
         user => {
             return `
-            <section id="footerNames">
-            <option id=" userInFooter ${user.id}">${user.name}</option>
-            </section>
+            <option value="${user.id}">${user.name}</option>
             `
         }
     )}
