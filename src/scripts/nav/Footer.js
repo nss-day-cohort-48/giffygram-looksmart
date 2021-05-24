@@ -1,4 +1,4 @@
-import { getUsers } from "../data/provider.js"
+import { getUsers, getPosts } from "../data/provider.js"
 
 const mainContainer = document.querySelector(".giffygram")
 
@@ -7,41 +7,48 @@ const mainContainer = document.querySelector(".giffygram")
 mainContainer.addEventListener(
     "change",
     (event) => {
-            if (event.target.id === "year21") {
-                document.getElementById("year21")
-                alert("2021")
-            }
+        if (event.target.name === "yearsDropdown") {
+            const postYearId = event.target.value
+            alert(`${postYearId}`)
         }
-    )
+    }
+)
+//Now get years and how would we go about this? somehow filter through time and grab certain ones.
+// const yearFunction = () => {
+//     const yearArray = getPosts()
+//     return `
+//             ${yearArray.map().join("")}`
+// }
 
-    //change change eventlistener for post by section
-    mainContainer.addEventListener(
-        "change",
-        (event) => {
-            if(event.target.id === "footerUsers") {
-                
-            }
+//change change eventlistener for post by section
+//same thing as above but for users not years
+mainContainer.addEventListener(
+    "change",
+    (event) => {
+        if (event.target.id === "footerNames") {
+            
         }
-    )
+    }
+)
 
-    // click eventListener for show only favorites section
-    mainContainer.addEventListener(
-        "click",
-        (event) => {
-            if(event.target.id === "favoritesInFooter") {
-                alert ("Hello World!!!")
-            }
+// click eventListener for show only favorites section
+mainContainer.addEventListener(
+    "click",
+    (event) => {
+        if (event.target.id === "favoritesInFooter") {
+            alert("Hello World!!!")
         }
-    )
+    }
+)
 
 export const footer = () => {
-    return`
+    return `
     <section class="Footer">
     <footer class="footer">
     <div class="yearSelect flexboxFooter footer__item">
 
     <p>Post since</p>
-    <select id="years" value="">
+    <select id="years" name="yearsDropdown"value="">
             <option id="year21" name='footerYear' value=“2021”>2021</option>
             <option id="year20" name='footerYear' value=“2020”>2020</option>
             <option id="year19" name='footerYear' value=“2019”>2019</option>
@@ -68,7 +75,9 @@ const footerUsers = () => {
     ${users.map(
         user => {
             return `
+            <section id="footerNames">
             <option id=" userInFooter ${user.id}">${user.name}</option>
+            </section>
             `
         }
     )}

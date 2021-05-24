@@ -10,6 +10,7 @@ import { sendGif } from "../data/provider.js"
 //         const usergifURL= document.querySelector("input[name='gifURL']").value
 //         const usergifStory = document.querySelector("input[name='gifStory']").value
 
+
 //         const dataToSendToAPI = {
 //             gifTitle: usergifTitle,
 //             gifURL: usergifURL,
