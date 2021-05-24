@@ -15,7 +15,7 @@ export const PostList = () => {
 
     })
 
-    let html = "<ul>"
+    let html = "<div>"
 
     const listPosts = posts.map(
         post => {
@@ -37,21 +37,21 @@ export const PostList = () => {
 
             /*for each post in the posts array(what we are mapping), return HTML to display 
             it's title, image, and description, as well as post details.*/
-            return ` <li> <h2> ${post.title} </h2></li>            
-            <li> <img src=" ${post.imageURL}"> </li>
-            <li> <div> ${post.description}</div> </li>
+            return `  <h2> ${post.title} </h2>            
+             <img src=" ${post.imageURL}"> 
+             <div> ${post.description}</div> 
             ${users.map(user => {
                 if (user.id === post.userId) {
-                    return `<li> <div> Posted by ${user.name} on ${upDate} </div></li>`
+                    return ` <div> Posted by ${user.name} on ${upDate} </div>`
                 }
             }).join("")
                 }
-        <li> <img class="actionIcon" id="favoritePost--${post.id}" src=${starImage} alt=${altText} /></li>
+         <img class="actionIcon" id="favoritePost--${post.id}" src=${starImage} alt=${altText} />
         `
         })
 
     html += listPosts.join("")
-    html += "</ul>"
+    html += "</div>"
 
     return html
 }

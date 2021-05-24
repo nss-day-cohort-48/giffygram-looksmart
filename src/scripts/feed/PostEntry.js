@@ -36,15 +36,17 @@ document.addEventListener("click", clickEvent => {
         const usergifStory = document.querySelector("input[name='gifStory']").value
 
 
-        let newDate = Date.now()
+        
+       
         const userId = parseInt(localStorage.getItem("gg_user"))
-        let upDate = newDate.toLocaleDateString(`en-US`)
+        
 
         const dataToSendToAPI = {
             title: usergifTitle,
             imageURL: usergifURL,
             description: usergifStory,
-            userId: userId
+            userId: userId,
+            timestamp: new Date()
         }
         sendGif(dataToSendToAPI)
     }
