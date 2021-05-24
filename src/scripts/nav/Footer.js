@@ -1,4 +1,5 @@
-import { getUsers, getPosts, getLikes } from "../data/provider.js"
+import { getUsers } from "../data/provider.js"
+import { filterWallByYear } from "../nav/FilterByYear.js"
 
 const mainContainer = document.querySelector(".giffygram")
 
@@ -14,67 +15,22 @@ mainContainer.addEventListener(
     }
 )
 
-const filterWallByYear = (postingYear) => {
-    const posts = getPosts()
-    const filteredPosts = []
-
-    for (let i = 0; i < posts.length; i++) {
-        if (posts[i].timestamp === postingYear) {
-            filteredPosts.push(posts[i])
-        }
-    }
-
-    const userId = parseInt(localStorage.getItem("gg_user"))
-    const likes = getLikes()
-
-
-
-    const likesInfo = likes.filter(like => {
-        return (userId === like.userId)
-    })
-    
-    let html = "<div id='postingWall'>"
-    
-    html += `
-    ${filteredPosts.map(
-        post => {
-        
-            const findFavorite = likesInfo.find(postLike => {
-                        
-                return (postLike.postId === post.id)
-            })
-            const starImage = (findFavorite === undefined ? './images/favorite-star-blank.svg' : './images/favorite-star-yellow.svg')
-            const altText = (findFavorite === undefined ? 'blank star' : 'yellow star')
-            return `
-                <h2>${post.title}</h2>
-                <img src="${post.imageURL}">
-                <div> ${post.description} </div>
-                ${displayPoster(post.id)}
-                <img class="actionIcon" id="favoritePost--${post.id}" src=${starImage} alt=${altText} />
-                `
-            }
-        ).join("\n")}
-    `
-
-    html += "</div>"
-    return html
-}
 
 // TODO: display poster name and date
-for (let i = 0; i < users.length; i++) {
-    if (users[i].id === userId) {
-        userName = users[i].name
-    }
-}
-const users = getUsers()
+// for (let i = 0; i < users.length; i++) {
+//     if (users[i].id === userId) {
+//         userName = users[i].name
+//     }
+// }
+// const users = getUsers()
 
-const displayPoster = (postId) => {
+// const displayPoster = (postId) => {
     
     
-    return `
-    <div>
-    `
-}
+//     return `
+//     <div>
+//     `
+// }
 
 // event listener for user filter dropdown
 mainContainer.addEventListener(
@@ -108,6 +64,7 @@ export const footer = () => {
             <option id="year20" name='footerYear'>2020</option>
             <option id="year19" name='footerYear'>2019</option>
             <option id="year18" name='footerYear'>2018</option>
+            <option id="year17" name='footerYear'>2017</option>
     </select>
     </div>
 
