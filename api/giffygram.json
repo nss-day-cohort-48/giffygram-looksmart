@@ -35,6 +35,12 @@
       "name": "Emily Lemmon",
       "email": "emily@lemmon.com",
       "password": "emily"
+    },
+    {
+      "name": "Alexander Lambrow",
+      "email": "alexander.lambrow@gmail.com",
+      "password": "poo",
+      "id": 7
     }
   ],
   "posts": [
@@ -119,6 +125,11 @@
       "userId": 1,
       "postId": 4,
       "id": 8
+    },
+    {
+      "postId": 1,
+      "userId": 4,
+      "id": 9
     }
   ],
   "messages": [
@@ -213,6 +224,13 @@
       "recipientId": 2,
       "read": false,
       "id": 14
+    },
+    {
+      "userId": 4,
+      "text": "hi",
+      "recipientId": 3,
+      "read": false,
+      "id": 15
     }
   ],
   "follows": [

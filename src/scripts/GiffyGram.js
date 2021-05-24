@@ -11,11 +11,10 @@ export const GiffyGram = () => {
     return `
     
     ${NavBar()}
-    ${messageBox()}
-
+    <section class="topFlex">
     ${postButton()}
-
-
+    ${messageBox()}
+    </section>
     <section>
     ${PostList()}
     </section>
