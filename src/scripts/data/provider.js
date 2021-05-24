@@ -125,7 +125,3 @@ export const fetchFollows = () => {
 export const getFollows = () => {
     return[...applicationState.follows]
 }
-
-export const getYears = () => {
-    return [...applicationState.years]
-}
