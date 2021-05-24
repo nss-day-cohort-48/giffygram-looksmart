@@ -16,9 +16,13 @@ export const createMessageForm = () => {
     `
 }
 
+export const messageBox = () => {
+    return `<div class="messageBox"></div>`
+}
+
 document.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "closeMessageWindow") {
-        document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
+        document.querySelector(".messageBox").innerHTML = messageBox()
     }
 })
 

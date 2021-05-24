@@ -1,9 +1,7 @@
 import { getMessages, getUsers, deleteMessage } from "../data/provider.js"
 
-export const messageBox = () => {
-    return `<div class="messageBox">
-            </div>
-    `
+export const DMBox = () => {
+    return `<div class="DMBox"></div>`
 }
 
 export const receivedMessages = () => {
@@ -18,12 +16,11 @@ export const receivedMessages = () => {
     }
     
     return `<div> 
+    <div class="DMTopflex">
     <h1>Your DMs</h1>
-    <ul>
-    ${inbox.map(inboxList).join("\n")}
-    </ul>
-
     <button id="closeMessageBox">Close</button>
+    </div>
+    ${inbox.map(inboxList).join("\n")}
     <div>
     `
 }

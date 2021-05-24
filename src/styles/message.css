@@ -1,8 +1,20 @@
+.DMTopflex {
+    display: flex;
+    flex-flow: row;
+}
+
 .messageBox {
     padding-top: 3rem;
 }
 
+#closeMessageBox {
+    margin: 1.5rem;
+}
 
+.DMBox {
+    margin-top: 3rem;
+}
+/* 
 .directMessage {
     padding: 0.75rem 2rem 2rem 2rem;
     margin: 5rem 25% 0 25%;
@@ -55,4 +67,4 @@
 .message__author {
     font-weight: bold;
     margin-bottom: 1rem;
-}
+} */

@@ -281,6 +281,13 @@
       "recipientId": 3,
       "read": false,
       "id": 15
+    },
+    {
+      "userId": 4,
+      "text": "hi",
+      "recipientId": 4,
+      "read": false,
+      "id": 16
     }
   ],
   "follows": [
