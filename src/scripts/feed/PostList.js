@@ -62,12 +62,6 @@ mainContainer.addEventListener("click", clickEvent => {
         }
         sendFavorite(newFavorite)
         alert(`Added to your Favorites`)
-    }
-        
-        
-
-
-        
+    }     
 })
 
-    

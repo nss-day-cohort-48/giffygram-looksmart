@@ -111,6 +111,9 @@ export const sendFavorite = (userPostFavorite) => {
     })
 }
 
+//function to delete from favorites upon clicking star.
+
+
 
 
 
