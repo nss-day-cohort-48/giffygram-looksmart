@@ -1,8 +1,7 @@
-import { getUsers } from "../data/provider.js"
 import { filterWallByYear } from "../nav/FilterByYear.js"
+import {footerUsers, footerFavorites, filterWallByUser} from "../nav/FilterByUser.js"
 
 const mainContainer = document.querySelector(".giffygram")
-
 
 //change eventlistener for the post since section
 mainContainer.addEventListener(
@@ -15,30 +14,13 @@ mainContainer.addEventListener(
     }
 )
 
-
-// TODO: display poster name and date
-// for (let i = 0; i < users.length; i++) {
-//     if (users[i].id === userId) {
-//         userName = users[i].name
-//     }
-// }
-// const users = getUsers()
-
-// const displayPoster = (postId) => {
-    
-    
-//     return `
-//     <div>
-//     `
-// }
-
 // event listener for user filter dropdown
 mainContainer.addEventListener(
     "change",
     (event) => {
         if (event.target.name === "footerNames") {
             const userId = parseInt(event.target.value)
-            alert(`${userId}`)
+            document.querySelector("#postingWall").innerHTML = filterWallByUser(userId)
         }
     }
 )
@@ -80,25 +62,4 @@ export const footer = () => {
     </footer>
     </section>
             `
-}
-
-const footerUsers = () => {
-    const users = getUsers()
-    return `
-    <select name="footerNames">
-    ${users.map(
-        user => {
-            return `
-            <option value="${user.id}">${user.name}</option>
-            `
-        }
-    )}
-    </select>`
-}
-
-const footerFavorites = () => {
-    //need a const something
-    return `
-    <input id="favoritesInFooter" type="checkbox">
-    `
 }
