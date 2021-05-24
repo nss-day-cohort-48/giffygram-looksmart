@@ -15,7 +15,9 @@ export const PostList = () => {
 
     })
 
-    let html = "<div>"
+
+    let html = "<div id='postingWall'>"
+
 
     const listPosts = posts.map(
         post => {
@@ -50,6 +52,7 @@ export const PostList = () => {
         `
         })
 
+
     html += listPosts.join("")
     html += "</div>"
 
@@ -69,6 +72,7 @@ mainContainer.addEventListener("click", clickEvent => {
             userId: parseInt(localStorage.getItem("gg_user"))
         }
         sendFavorite(newFavorite)
+
         //alert(`Added to your Favorites`)
     }
 })
@@ -88,6 +92,7 @@ mainContainer.addEventListener("click", clickEvent => {
 
         favoriteDeleteRequest(parseInt(postId))
     }
+
 })
 
 */
