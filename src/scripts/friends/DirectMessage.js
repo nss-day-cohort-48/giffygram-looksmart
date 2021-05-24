@@ -24,16 +24,17 @@ export const receivedMessages = () => {
         }
     }
 
-    return `<div> 
+    return `<div class="DMDisplay"> 
     <div class="DMTopflex">
     <h1>Your DMs</h1>
     <button id="closeMessageBox">Close</button>
     </div>
-    <h3>inbox</h3>
+    <div class="inbox">inbox
     ${inbox.map(inboxList).join("\n")}
-    <h3>read DMs</h3>
+    </div>
+    <div class="readInbox">read messages
     ${readInbox.map(readList).join("\n")}
-    <div>
+    </div>
     `
 }
 
@@ -49,7 +50,7 @@ const inboxList = (message) => {
     }
 
     return `
-    <div>${senderName}: ${message.text}
+    <div class="unreadMessage">${senderName}: ${message.text}
     <button id="markAsRead--${message.id}">mark as read</button>
     <button id="deleteMessage--${message.id}">delete</button>
     </div>
@@ -68,7 +69,7 @@ const readList = (message) => {
     }
 
     return `
-    <div>${senderName}: ${message.text}
+    <div class="readMessage">${senderName}: ${message.text}
     <button id="deleteMessage--${message.id}">delete</button>
     </div>
     `

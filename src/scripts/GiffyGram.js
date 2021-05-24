@@ -10,18 +10,16 @@ import { messageBox } from "./message/MessageForm.js"
 export const GiffyGram = () => {
     return `
     ${NavBar()}
-    <section class="topFlex">
+    <section class="mainflex">
+    <div class="postingWall">
     ${postButton()}
+    ${PostList()}
+    </div>
+    <div class="asideWall">
     ${messageBox()}
     ${DMBox()}
+    </div>
     </section>
-    
-    <section>
-    ${PostList()}
-    </section>
-
-    <section class="Footer">
     ${footer()}
-    </section>
     `
 }

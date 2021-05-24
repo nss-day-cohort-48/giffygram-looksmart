@@ -4,6 +4,7 @@ import { getUsers, sendMessageToDatabase } from "../data/provider.js"
 export const createMessageForm = () => {
     return `
         <div class="messageBox">
+            <h1>DM Someone</h1>
             <select id="recipientSelection">
                 ${recipientSelectionList()}
             </select>
