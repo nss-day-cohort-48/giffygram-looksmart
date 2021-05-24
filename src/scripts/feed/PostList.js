@@ -1,4 +1,4 @@
-import { getPosts, getUsers, sendFavorite, getLikes, favoriteDeleteRequest } from "../data/provider.js"
+import { getPosts, getUsers, sendFavorite, getLikes, favoriteDeleteRequest, deletePost } from "../data/provider.js"
 
 const mainContainer = document.querySelector(".giffygram")
 
@@ -36,7 +36,7 @@ export const PostList = () => {
             homepage, otherwise the user has already liked it so display a gold star*/
             const starImage = (findFavorite === undefined ? './images/favorite-star-blank.svg' : './images/favorite-star-yellow.svg')
             const altText = (findFavorite === undefined ? 'blank star' : 'yellow star')
-
+            const deleteIcon = (post.userId === parseInt(localStorage.getItem("gg_user")) ? './images/block.svg' : 'none')
             /*for each post in the posts array(what we are mapping), return HTML to display 
             it's title, image, and description, as well as post details.*/
             return `  <h2> ${post.title} </h2>            
@@ -49,6 +49,7 @@ export const PostList = () => {
             }).join("")
                 }
          <img class="actionIcon" id="favoritePost--${post.id}" src=${starImage} alt=${altText} />
+         <img class="actionIcon" id="deletePost--${post.id}" src=${deleteIcon} alt='Delete Icon'/>
         `
         })
 
@@ -78,7 +79,12 @@ mainContainer.addEventListener("click", clickEvent => {
 })
 
 
-
+mainContainer.addEventListener("click", clickEvent => {
+    if(clickEvent.target.id.startsWith("deletePost--")) {
+      const [, postId] = clickEvent.target.id.split("--")  
+        deletePost(parseInt(postId))
+    }
+})
 
 
 

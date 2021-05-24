@@ -86,7 +86,13 @@ export const sendGif = (userGifSubmission) => {
     })
 }
 
-
+export const deletePost = (id) => {
+    return fetch(`${apiURL}/posts/${id}`, { method: "DELETE"})
+        .then(
+            () => {
+                applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
+            }
+                )}
 
 export const fetchLikes = () => {
 
