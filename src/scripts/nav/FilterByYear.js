@@ -1,6 +1,7 @@
-import {getPosts, getLikes} from "../data/provider.js"
+import {getPosts, getLikes, getUsers} from "../data/provider.js"
 
 export const filterWallByYear = (postingYear) => {
+    const users = getUsers()
     const posts = getPosts()
     const filteredPosts = []
 
@@ -31,6 +32,14 @@ export const filterWallByYear = (postingYear) => {
     ${filteredPosts.map(
         post => {
             
+            let posterName = "..."
+            for (let i = 0; i < users.length; i++) {
+                if (post.userId === users[i].id) {
+                    posterName = users[i].name
+                }
+            }
+            const postDate = (new Date(post.timestamp)).toLocaleDateString('en-US')
+            
             const findFavorite = likesInfo.find(postLike => {
                         
                 return (postLike.postId === post.id)
@@ -41,6 +50,7 @@ export const filterWallByYear = (postingYear) => {
                 <h2>${post.title}</h2>
                 <img src="${post.imageURL}">
                 <div> ${post.description} </div>
+                <div>Posted by ${posterName} on ${postDate}
                 
                 <img class="actionIcon" id="favoritePost--${post.id}" src=${starImage} alt=${altText} />
                 `
