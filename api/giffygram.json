@@ -83,6 +83,36 @@
       "userId": 1,
       "timestamp": 1621534541361,
       "id": 5
+    },
+    {
+      "gifTitle": "Test",
+      "gifURL": "https://cdn.vox-cdn.com/thumbor/a5EcHSnHLRfQyzSFvhmPSnibCq0=/0x0:420x314/1400x1400/filters:focal(136x115:202x181):format(gif)/cdn.vox-cdn.com/uploads/chorus_image/image/55279403/tenor.0.gif",
+      "gifStory": "Hello",
+      "id": 6
+    },
+    {
+      "title": "Test once more",
+      "imageURL": "https://hips.hearstapps.com/pop.h-cdn.co/assets/17/24/1497533116-not-dead.gif?crop=0.8166666666666667xw:1xh;center,top&resize=640:*",
+      "description": "123",
+      "userId": 1,
+      "timestamp": "5/24/2021",
+      "id": 7
+    },
+    {
+      "title": "Is this working",
+      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_8kQkfFNSxtNpw6iYOl1G-QMWIftAORzMuN6k7yGZJGJeNGxcrLc7EU7UZftwxAxgD_s&usqp=CAU",
+      "description": "Is this working",
+      "userId": 1,
+      "timestamp": "2021-05-24T19:39:25.806Z",
+      "id": 8
+    },
+    {
+      "title": "Testing",
+      "imageURL": "https://static.wikia.nocookie.net/f6074994-2c3f-4774-9de7-b140a7fdead3",
+      "description": "May work",
+      "userId": 1,
+      "timestamp": "2021-05-24T19:40:16.489Z",
+      "id": 9
     }
   ],
   "likes": [
@@ -92,19 +122,9 @@
       "postId": 2
     },
     {
-      "id": 2,
-      "userId": 3,
-      "postId": 2
-    },
-    {
       "id": 3,
       "userId": 2,
       "postId": 1
-    },
-    {
-      "userId": 3,
-      "postId": 4,
-      "id": 4
     },
     {
       "userId": 1,
@@ -132,6 +152,11 @@
       "id": 9
     },
     {
+      "postId": 3,
+      "userId": 1,
+      "id": 10
+    },
+    {
       "postId": 2,
       "userId": 4,
       "id": 10
@@ -143,7 +168,12 @@
     },
     {
       "postId": 4,
-      "userId": 4,
+      "userId": 1,
+      "id": 12
+    },
+    {
+      "postId": 8,
+      "userId": 1,
       "id": 12
     },
     {

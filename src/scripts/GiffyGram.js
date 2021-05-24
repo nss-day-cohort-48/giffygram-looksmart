@@ -5,13 +5,16 @@ import { postButton } from "./feed/Post.js"
 import { messageBox } from "./friends/DirectMessage.js"
 
 
+
 export const GiffyGram = () => {
     return `
     ${NavBar()}
     <section class="topFlex">
     ${postButton()}
+
     ${messageBox()}
     </section>
+    
     <section>
     ${PostList()}
     </section>

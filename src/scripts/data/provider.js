@@ -98,7 +98,8 @@ export const fetchLikes = () => {
     })
 }
 
-export const getLikes = () => {
+export const getLikes = (id) => {
+    
     return [...applicationState.likes]
 }
 
@@ -117,6 +118,18 @@ export const sendFavorite = (userPostFavorite) => {
         applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
     })
 }
+
+//function to delete from favorites upon clicking star.
+export const favoriteDeleteRequest = (id) => {
+    return fetch(`${apiURL}/likes/${id}`, {method:"DELETE"})
+    .then(
+        () =>{
+            applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
+        }
+    )
+}
+
+
 
 export const fetchMessages = () => {
     return fetch(`${apiURL}/messages`)
