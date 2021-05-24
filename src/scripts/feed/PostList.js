@@ -12,7 +12,7 @@ export const PostList = () => {
          
     }    )
 
-    let html = "<ul>"
+    let html = "<div id='postingWall'><ul>"
 
     const listPosts = posts.map(
         post => {
@@ -43,7 +43,7 @@ export const PostList = () => {
         })
 
 html += listPosts.join("")
-html += "</ul>"
+html += "</ul></div>"
 
 return html
 }
@@ -62,12 +62,7 @@ mainContainer.addEventListener("click", clickEvent => {
         }
         sendFavorite(newFavorite)
         alert(`Added to your Favorites`)
-    }
-        
-        
-
-
-        
+    }       
 })
 
     
