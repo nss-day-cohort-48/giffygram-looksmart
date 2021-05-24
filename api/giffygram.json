@@ -130,6 +130,21 @@
       "postId": 1,
       "userId": 4,
       "id": 9
+    },
+    {
+      "postId": 2,
+      "userId": 4,
+      "id": 10
+    },
+    {
+      "postId": 5,
+      "userId": 4,
+      "id": 11
+    },
+    {
+      "postId": 4,
+      "userId": 4,
+      "id": 12
     }
   ],
   "messages": [

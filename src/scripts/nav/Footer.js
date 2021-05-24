@@ -24,35 +24,56 @@ const filterWallByYear = (postingYear) => {
         }
     }
 
+    const userId = parseInt(localStorage.getItem("gg_user"))
     const likes = getLikes()
+
+
+
     const likesInfo = likes.filter(like => {
-        return (parseInt(localStorage.getItem("gg_user")) === like.userId)
+        return (userId === like.userId)
     })
-
-    let html = "<div>"
-    filteredPosts.map(
+    
+    let html = "<div id='postingWall'>"
+    
+    html += `
+    ${filteredPosts.map(
         post => {
-
+        
             const findFavorite = likesInfo.find(postLike => {
-
+                        
                 return (postLike.postId === post.id)
             })
-
             const starImage = (findFavorite === undefined ? './images/favorite-star-blank.svg' : './images/favorite-star-yellow.svg')
             const altText = (findFavorite === undefined ? 'blank star' : 'yellow star')
+            return `
+                <h2>${post.title}</h2>
+                <img src="${post.imageURL}">
+                <div> ${post.description} </div>
+                ${displayPoster(post.id)}
+                <img class="actionIcon" id="favoritePost--${post.id}" src=${starImage} alt=${altText} />
+                `
+            }
+        ).join("\n")}
+    `
 
-
-            return `<h2> ${post.title} </h2>           
-            <img src=" ${post.imageURL}">
-            <div> ${post.description}</div>
-            <img class="actionIcon" id="favoritePost--${post.id}" src=${starImage} alt=${altText} />
-        `
-        }
-    )
-    html += filteredPosts.join("")
     html += "</div>"
-
     return html
+}
+
+// TODO: display poster name and date
+for (let i = 0; i < users.length; i++) {
+    if (users[i].id === userId) {
+        userName = users[i].name
+    }
+}
+const users = getUsers()
+
+const displayPoster = (postId) => {
+    
+    
+    return `
+    <div>
+    `
 }
 
 // event listener for user filter dropdown
