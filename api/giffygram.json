@@ -35,24 +35,6 @@
       "name": "Emily Lemmon",
       "email": "emily@lemmon.com",
       "password": "emily"
-    },
-    {
-      "name": "Alexander Lambrow",
-      "email": "alexander.lambrow@gmail.com",
-      "password": "",
-      "id": 18
-    },
-    {
-      "name": "Alexander Lambrow",
-      "email": "alexander.lambrow@gmail.com",
-      "password": "",
-      "id": 8
-    },
-    {
-      "name": "Alexander Lambrow",
-      "email": "alexander.lambrow@gmail.com",
-      "password": "",
-      "id": 9
     }
   ],
   "posts": [
@@ -217,6 +199,20 @@
       "recipientId": 1,
       "message": "you cant hide from me",
       "id": 12
+    },
+    {
+      "userId": 4,
+      "text": "hi",
+      "recipientId": 2,
+      "read": false,
+      "id": 13
+    },
+    {
+      "userId": 4,
+      "text": "hi",
+      "recipientId": 2,
+      "read": false,
+      "id": 14
     }
   ],
   "follows": [
