@@ -27,6 +27,6 @@ document.addEventListener("click", clickEvent => {
 
 document.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "messageBox") {
-        document.querySelector(".messageBox").innerHTML = receivedMessages()
+        document.querySelector(".DMBox").innerHTML = receivedMessages()
     }
 })

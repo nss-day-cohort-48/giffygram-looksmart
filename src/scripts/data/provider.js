@@ -1,3 +1,5 @@
+import { receivedMessages } from "../friends/DirectMessage.js"
+
 const apiURL = "http://localhost:8088"
 const applicationElement = document.querySelector(".giffygram")
 
@@ -98,7 +100,8 @@ export const fetchLikes = () => {
     })
 }
 
-export const getLikes = () => {
+export const getLikes = (id) => {
+    
     return [...applicationState.likes]
 }
 
@@ -117,6 +120,18 @@ export const sendFavorite = (userPostFavorite) => {
         applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
     })
 }
+
+//function to delete from favorites upon clicking star.
+export const favoriteDeleteRequest = (id) => {
+    return fetch(`${apiURL}/likes/${id}`, {method:"DELETE"})
+    .then(
+        () =>{
+            applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
+        }
+    )
+}
+
+
 
 export const fetchMessages = () => {
     return fetch(`${apiURL}/messages`)
@@ -144,6 +159,22 @@ export const fetchFollows = () => {
 
 export const getFollows = () => {
     return[...applicationState.follows]
+}
+
+export const markMessageAsRead = (messageId) => {
+    return fetch(`${apiURL}/messages/${messageId}`,
+    {
+        headers: {"Content-Type": "application/json"},
+        method: 'PATCH',
+        body: JSON.stringify({
+            read: true
+        })
+    })
+    .then(
+        () => {
+            applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
+        }
+    )
 }
 
 export const deleteMessage = (id) => {

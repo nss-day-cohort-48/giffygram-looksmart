@@ -1,8 +1,36 @@
+.DMTopflex {
+    display: flex;
+    flex-flow: row;
+}
+
 .messageBox {
     padding-top: 3rem;
 }
 
+#closeMessageBox {
+    margin: 1.5rem;
+}
 
+.DMDisplay {
+    background-color: rgb(112,128,144, .6);
+    padding: 1rem;
+}
+
+.DMBox {
+    margin-top: 3rem;
+}
+
+.inbox {
+    background-color: white;
+    padding: 1rem;
+}
+
+.readInbox {
+    background-color: rgb(124, 124, 124);
+    padding-bottom: 1rem;
+}
+
+/* 
 .directMessage {
     padding: 0.75rem 2rem 2rem 2rem;
     margin: 5rem 25% 0 25%;
@@ -55,4 +83,4 @@
 .message__author {
     font-weight: bold;
     margin-bottom: 1rem;
-}
+} */
