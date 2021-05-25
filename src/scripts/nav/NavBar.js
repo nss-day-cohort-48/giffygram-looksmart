@@ -47,3 +47,9 @@ document.addEventListener("click", clickEvent => {
         document.querySelector(".DMBox").innerHTML = receivedMessages()
     }
 })
+
+document.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "pbImage") {
+        document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
+    }
+})

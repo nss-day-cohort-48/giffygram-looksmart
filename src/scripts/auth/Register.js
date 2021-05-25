@@ -19,6 +19,12 @@ document.addEventListener("click", clickEvent => {
     }
 })
 
+document.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "coverPBimage") {
+        document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
+    }
+})
+
 // HTML-producing component of registration events
 const registerMe = () => {
     return `
