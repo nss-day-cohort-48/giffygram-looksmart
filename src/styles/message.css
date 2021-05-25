@@ -4,30 +4,50 @@
     justify-content: space-between;
 }
 
-.messageBox {
-    padding: 3rem 1rem 1rem 1rem;
-    background-color: rgb(112,128,144, .6);;
+.messageBoxinner {
+    margin: 5rem 1rem 0rem 1rem;
+    padding: 1rem 2.5rem 2.5rem 2.5rem;
+    background-color: rgb(112,128,144, .6);
+    border-radius: 5%;
 }
 
 #closeMessageBox {
     margin: 1rem;
-    padding: -.5rem;
+    padding: -1rem;
+}
+
+#closeMessageWindow {
+    margin: 1rem;
+    padding: -1rem -1rem;
 }
 
 .DMDisplay {
     background-color: rgb(112,128,144, .6);
     padding: 1rem;
-    border-radius: 10%;
-    margin: 2rem;
+    border-radius: 5%;
+    margin: 5rem 1rem 2rem 1rem;
 }
 
 .DMBox {
     margin-top: 3rem;
 }
 
+.yourDMs {
+    color: #404040;
+    font-family: "Comfortaa", Arial, sans-serif;
+    font-size: 1rem;
+}
+
+.MessageTopflex {
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-between;
+}
+
 .inbox {
-    background-color: white;
-    padding: 1rem;
+    background-color: rgb(245, 245, 245, .8);
+    padding: 1rem 15rem 1rem 2rem;
+    text-decoration: underline;
 }
 
 .unreadMessage {
@@ -40,8 +60,13 @@
 .readInbox {
     background-color: rgb(180, 175, 175, .8);
     padding: 1rem;
+    padding: 1rem 15rem 1rem 2rem;
+    text-decoration: underline;
 }
 
+.readMessage {
+    background-color: rgb(187, 223, 238, .8);
+}
 
 /* 
 .directMessage {

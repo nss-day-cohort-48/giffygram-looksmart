@@ -3,8 +3,11 @@ import { getUsers, sendMessageToDatabase } from "../data/provider.js"
 // input form for recipientId and text
 export const createMessageForm = () => {
     return `
-        <div class="messageBox">
-            <h1>DM Someone</h1>
+        <div class="messageBoxinner">
+            <div class="MessageTopflex">
+            <h1>Send DM</h1>
+            <button id="closeMessageWindow">Close</button>
+            </div>
             <select id="recipientSelection">
                 ${recipientSelectionList()}
             </select>
@@ -12,7 +15,6 @@ export const createMessageForm = () => {
                 <input type="text" name="messageText" class="textBodyInput" placeholder="Message body"/>
             </div>
             <button id="sendMessage">Send</button>
-            <button id="closeMessageWindow">Close</button>
         </div>
     `
 }
