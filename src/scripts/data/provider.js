@@ -104,7 +104,17 @@ export const fetchLikes = () => {
     })
 }
 
-export const getLikes = (id) => {
+export const setChosenLike = (id) => {
+    const doesExsist = applicationState.likes.indexOf(id)
+    if (doesExsist < 0) {
+        applicationState.likes.push(id)
+    }
+    else {
+        applicationState.likes.splice(doesExist, 1)
+    }
+}
+
+export const getLikes = () => {
     
     return [...applicationState.likes]
 }

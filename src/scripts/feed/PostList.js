@@ -67,8 +67,6 @@ export const PostList = () => {
     return html
 }
 
-//const actionIcon = document.querySelector(".actionIcon")
-
 
 mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("favoritePost--")) {
