@@ -1,5 +1,6 @@
 import { filterWallByYear } from "../nav/FilterByYear.js"
-import {footerUsers, footerFavorites, filterWallByUser} from "../nav/FilterByUser.js"
+import {footerUsers, filterWallByUser} from "../nav/FilterByUser.js"
+import { filterByLikes } from "../nav/FilterByLikes.js"
 
 const mainContainer = document.querySelector(".giffygram")
 
@@ -30,7 +31,7 @@ mainContainer.addEventListener(
     "click",
     (event) => {
         if (event.target.id === "favoritesInFooter") {
-            alert("Hello World!!!")
+            document.querySelector("#postingWall").innerHTML = filterByLikes()
         }
     }
 )
@@ -57,7 +58,7 @@ export const footer = () => {
 
     <div class="footerFavorites footer__item">
     <p class="favoritesText">Show only favorites</p>
-    ${footerFavorites()}
+    <input id="favoritesInFooter" type="checkbox">
     </div>
     </footer>
     </section>
