@@ -35,6 +35,5 @@ applicationElement.addEventListener(
             () => {
         applicationElement.innerHTML = GiffyGram()
         document.querySelector(".DMBox").innerHTML = receivedMessages()
-        }
-        )}
+        })}
 )
