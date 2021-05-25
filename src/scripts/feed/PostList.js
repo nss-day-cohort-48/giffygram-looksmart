@@ -1,4 +1,4 @@
-import { getPosts, getUsers, sendFavorite, getLikes, favoriteDeleteRequest, deletePost } from "../data/provider.js"
+import { getPosts, getUsers, sendFavorite, getLikes, favoriteDeleteRequest, deletePost, setChosenLike } from "../data/provider.js"
 
 const mainContainer = document.querySelector(".giffygram")
 
@@ -77,7 +77,8 @@ mainContainer.addEventListener("click", clickEvent => {
             postId: parseInt(postId),
             userId: parseInt(localStorage.getItem("gg_user"))
         }
-        sendFavorite(newFavorite)
+        
+        setChosenLike(newFavorite)
 
         //alert(`Added to your Favorites`)
     }

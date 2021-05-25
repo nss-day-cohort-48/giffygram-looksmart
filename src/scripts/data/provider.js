@@ -105,8 +105,8 @@ export const fetchLikes = () => {
 }
 
 export const setChosenLike = (id) => {
-    const doesExsist = applicationState.likes.indexOf(id)
-    if (doesExsist < 0) {
+    const doesExist = applicationState.likes.indexOf(id)
+    if (doesExist < 0) {
         applicationState.likes.push(id)
     }
     else {
