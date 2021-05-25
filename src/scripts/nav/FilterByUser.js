@@ -14,12 +14,12 @@ export const footerUsers = () => {
     </select>`
 }
 
-export const footerFavorites = () => {
-    //need a const something
-    return `
-    <input id="favoritesInFooter" type="checkbox">
-    `
-}
+// export const footerFavorites = () => {
+    
+//     return `
+//     <input id="favoritesInFooter" type="checkbox">
+//     `
+// }
 
 export const filterWallByUser = (userID) => {
     const posts = getPosts()
