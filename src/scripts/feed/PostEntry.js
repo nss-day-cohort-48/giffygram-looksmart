@@ -4,19 +4,19 @@ export const PostEntry = () => {
     let html = `
     <div class="field">
         <label class="label" for="gifTitle"></label>
-        <input type="text" name="gifTitle" class="input" placeholder="Title"/>
+        <input type="text" name="gifTitle" class="input inputTitle" placeholder="Title"/>
     </div>
     <div class="field">
         <label class="label" for="gifURL"></label>
-        <input type="URL" name="gifURL" class="input" placeholder="URL of Gif"/>
+        <input type="URL" name="gifURL" class="input inputGifURL" placeholder="URL of Gif"/>
     </div>
     <div class="field">
         <label class="label" for="gifStory"></label>
-        <input type="text" name="gifStory" class="input" placeholder="Story behind your gif..."/>
+        <input type="text" name="gifStory" class="input inputStory" placeholder="Story behind your gif..."/>
     </div>  
     
-    <button class="button" id="submitGif">Save Gif</button>
-    <button class="button" id="cancelGif">Cancel Gif</button>
+    <button class="button" id="submitGif"></button>
+    <button class="button" id="cancelGif"></button>
     `
 return html
 }
