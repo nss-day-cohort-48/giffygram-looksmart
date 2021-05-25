@@ -1,6 +1,6 @@
 import {getUsers, getPosts, getLikes} from "../data/provider.js"
 
-export const filterByLikes= (userID) => {
+export const filterByLikes= () => {
     
     const posts = getPosts()
     const likes = getLikes()
@@ -22,12 +22,7 @@ export const filterByLikes= (userID) => {
         }
     }
 
-    const likesInfo = likes.filter(like => {
-        return (userId === like.userId)
-    })
-
     const usersArray = getUsers()
-
     let html = "<div id='postingWall'>"
     html += `
     ${filteredPosts.map(
@@ -39,11 +34,10 @@ export const filterByLikes= (userID) => {
                 }
             }
             const postDate = (new Date(post.timestamp)).toLocaleDateString('en-US')
-            const findFavorite = likesInfo.find(postLike => {
-                return (postLike.postId === post.id)
-            })
-            const starImage = (findFavorite === undefined ? './images/favorite-star-blank.svg' : './images/favorite-star-yellow.svg')
-            const altText = (findFavorite === undefined ? 'blank star' : 'yellow star')
+            const starImage = './images/favorite-star-yellow.svg'
+            const altText = 'yellow star'
+
+
             return `
                 <h2>${post.title}</h2>
                 <img src="${post.imageURL}">

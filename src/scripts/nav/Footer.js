@@ -31,8 +31,7 @@ mainContainer.addEventListener(
     "click",
     (event) => {
         if (event.target.id === "favoritesInFooter") {
-            const likeId = parseInt(event.target.value)
-            document.querySelector("#postingWall").innerHTML = filterByLikes(likeId)
+            document.querySelector("#postingWall").innerHTML = filterByLikes()
         }
     }
 )
