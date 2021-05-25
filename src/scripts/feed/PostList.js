@@ -70,7 +70,7 @@ export const PostList = () => {
 
 mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("favoritePost--")) {
-
+        
         const [, postId] = clickEvent.target.id.split("--")
         const newFavorite = {
 
@@ -107,3 +107,4 @@ mainContainer.addEventListener("click", clickEvent => {
 })
 
 */
+

@@ -119,6 +119,7 @@ export const getLikes = () => {
     return [...applicationState.likes]
 }
 
+
 //setter function for favoriting posts
 export const sendFavorite = (userPostFavorite) => {
     const fetchOptions = {
