@@ -27,12 +27,17 @@ document.addEventListener("click", clickEvent => {
     }
 })
 
-
 document.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "sendMessage") {
         const recipientId = parseInt(document.querySelector("#recipientSelection").value)
         const textBody = document.querySelector(".textBodyInput").value
         const userId = parseInt(localStorage.getItem("gg_user"))
+
+        if (textBody === "") {
+            document.querySelector(".textBodyInput").style.background = "#fc7878"
+            alert("Please add a message!")
+            return
+        }
 
         const messageObject = {
             userId: userId,
@@ -43,8 +48,6 @@ document.addEventListener("click", clickEvent => {
         sendMessageToDatabase(messageObject)
     }
 })
-
-
 
 const recipientSelectionList = () => {
     const usersArray = getUsers()
