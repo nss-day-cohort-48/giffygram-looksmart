@@ -17,9 +17,10 @@ body, button, input, select, textarea {
     margin: 0;
 }
 
-.topFlex {
+
+.mainflex {
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: row;
 }
 
 h1, h2, h3, h4, h5, h6 {

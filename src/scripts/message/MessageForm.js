@@ -4,6 +4,7 @@ import { getUsers, sendMessageToDatabase } from "../data/provider.js"
 export const createMessageForm = () => {
     return `
         <div class="messageBox">
+            <h1>DM Someone</h1>
             <select id="recipientSelection">
                 ${recipientSelectionList()}
             </select>
@@ -16,9 +17,13 @@ export const createMessageForm = () => {
     `
 }
 
+export const messageBox = () => {
+    return `<div class="messageBox"></div>`
+}
+
 document.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "closeMessageWindow") {
-        document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
+        document.querySelector(".messageBox").innerHTML = messageBox()
     }
 })
 

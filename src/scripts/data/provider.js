@@ -1,3 +1,5 @@
+import { receivedMessages } from "../friends/DirectMessage.js"
+
 const apiURL = "http://localhost:8088"
 const applicationElement = document.querySelector(".giffygram")
 
@@ -157,6 +159,22 @@ export const fetchFollows = () => {
 
 export const getFollows = () => {
     return[...applicationState.follows]
+}
+
+export const markMessageAsRead = (messageId) => {
+    return fetch(`${apiURL}/messages/${messageId}`,
+    {
+        headers: {"Content-Type": "application/json"},
+        method: 'PATCH',
+        body: JSON.stringify({
+            read: true
+        })
+    })
+    .then(
+        () => {
+            applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
+        }
+    )
 }
 
 export const deleteMessage = (id) => {
