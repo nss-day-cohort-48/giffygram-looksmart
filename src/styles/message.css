@@ -1,8 +1,96 @@
-.messageBox {
-    padding-top: 3rem;
+.DMTopflex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
 }
 
+.messageBoxinner {
+    margin: 5rem 1rem 0rem 1rem;
+    padding: 1rem 2.5rem 2.5rem 2.5rem;
+    background-color: rgb(112,128,144, .6);
+    border-radius: 5%;
+}
 
+#closeMessageBox {
+    margin: 1rem;
+    padding: -1rem;
+}
+
+#closeMessageWindow {
+    margin: 1rem;
+    padding: -1rem -1rem;
+}
+
+.DMDisplay {
+    background-color: rgb(112,128,144, .6);
+    padding: 2.5rem;
+    border-radius: 5%;
+    margin: 5rem 1rem 2rem 1rem;
+}
+
+.DMBox {
+    margin-top: 3rem;
+}
+
+.yourDMs {
+    color: #404040;
+    font-family: "Comfortaa", Arial, sans-serif;
+    font-size: 1rem;
+}
+
+.MessageTopflex {
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-between;
+}
+
+.MessageBottomFlex {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    align-items: center;
+}
+
+.textBodyInput {
+    padding: 4rem;
+}
+
+#recipientSelection {
+    margin-bottom: 3rem;
+}
+
+.inbox {
+    background-color: rgb(245, 245, 245, .8);
+    padding: 1rem 2rem;
+}
+
+.unreadMessage {
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-evenly;
+}
+
+.messageText {
+    display: flex;
+    flex-direction: row wrap;
+}
+
+.newMessageBody {
+    padding: 0rem 3rem;
+}
+
+.readInbox {
+    background-color: rgb(180, 175, 175, .8);
+    padding: 1rem;
+    padding: 1rem 15rem 1rem 2rem;
+}
+
+.readMessage {
+    background-color: rgb(187, 223, 238, .8);
+}
+
+/* 
 .directMessage {
     padding: 0.75rem 2rem 2rem 2rem;
     margin: 5rem 25% 0 25%;
@@ -55,4 +143,4 @@
 .message__author {
     font-weight: bold;
     margin-bottom: 1rem;
-}
+} */

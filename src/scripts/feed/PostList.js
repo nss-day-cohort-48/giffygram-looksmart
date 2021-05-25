@@ -29,7 +29,6 @@ export const PostList = () => {
             where the postId of the current user favorites is equal to the id 
             of the individual post*/
             const findFavorite = likesInfo.find(postLike => {
-
                 return (postLike.postId === post.id)
             })
             /*if the postId of the user favorites != post.id, then display a blank star on the 
@@ -70,19 +69,28 @@ export const PostList = () => {
 
 mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("favoritePost--")) {
-        const likes = getLikes()
+
         const [, postId] = clickEvent.target.id.split("--")
+        const userId = parseInt(localStorage.getItem("gg_user"))
+        const likesArray = getLikes()
+        const postID = parseInt(postId)
+
+        for (let i = 0; i < likesArray.length; i++) {
+            if (likesArray[i].postId === postID && likesArray[i].userId === userId) {
+                const likeId = likesArray[i].id
+                favoriteDeleteRequest(likeId)
+                alert("Favorite deleted!")
+                document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
+                return
+            }
+        }
         const newFavorite = {
             postId: parseInt(postId),
             userId: parseInt(localStorage.getItem("gg_user"))
         }
-        
 
-       if ((likes.find(like => like.postId === parseInt(postId)) && likes.find(like2 => like2.userId === parseInt(localStorage.getItem("gg_user")))) === undefined) {
-       sendFavorite(newFavorite)
-       } else favoriteDeleteRequest(newFavorite)
-
-        //alert(`Added to your Favorites`)
+        sendFavorite(newFavorite)
+        alert("Post liked!")
     }
 })
 
@@ -97,17 +105,4 @@ mainContainer.addEventListener("click", clickEvent => {
 
 
 
-
-//eventListener to remove post from favorites
-/*mainContainer.addEventListener("change", clickEvent => {
-    if (clickEvent.target.id.startsWith("favoritePost--")) {
-        const likes = getLikes()
-        const [, postId] = clickEvent.target.id.split("--")
-
-        if (likes.indexOf(postId) > -1 ? favoriteDeleteRequest(parseInt(postId)) :  
-    }
-
-})
-
-*/
 

@@ -2,25 +2,24 @@ import { NavBar } from "./nav/NavBar.js"
 import { PostList } from "../scripts/feed/PostList.js"
 import { footer } from "../scripts/nav/Footer.js"
 import { postButton } from "./feed/Post.js"
-import { messageBox } from "./friends/DirectMessage.js"
+import { DMBox } from "./friends/DirectMessage.js"
+import { messageBox } from "./message/MessageForm.js"
 
 
 
 export const GiffyGram = () => {
     return `
     ${NavBar()}
-    <section class="topFlex">
+    <section class="mainflex">
+    <div class="postingWall">
     ${postButton()}
-
-    ${messageBox()}
-    </section>
-    
-    <section>
     ${PostList()}
+    </div>
+    <div class="asideWall">
+    ${messageBox()}
+    ${DMBox()}
+    </div>
     </section>
-
-    <section class="Footer">
     ${footer()}
-    </section>
     `
 }

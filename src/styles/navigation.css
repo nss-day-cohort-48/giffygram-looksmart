@@ -1,16 +1,18 @@
 #penImage {
     height: 2rem;
     width: 2rem;
+    margin: 0rem .5rem;
 }
 
-#pgImage {
-    height: -1rem;
+#pbImage {
+    height: 2rem;
+    width: 2rem;
 }
 
 .navigation {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: start;
+    justify-content: space-between;
     border-bottom: 1px solid lightblue;
     padding: 0.5em 0 0.5em 1em;
     margin-bottom: 2em;
@@ -21,16 +23,28 @@
     background-color: whitesmoke;
     margin: auto;
 }
+
+#giffyLogo {
+    font-size: 1.5rem;
+    padding-left: 0.5rem;
+    padding-top: 0.1rem;
+}
+
+.flexRight {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#logout_button {
+    padding: .1rem;
+    margin: 0rem 2rem;
+}
 /* 
 .navigation__item {
     vertical-align: baseline;
 }
 
-.navigation__name {
-    font-size: 1.5rem;
-    padding-left: 0.5rem;
-    padding-top: 0.1rem;
-}
 
 .navigation__icon > img {
     height: 2rem;

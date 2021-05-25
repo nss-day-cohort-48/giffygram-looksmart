@@ -1,5 +1,7 @@
 import { filterWallByYear } from "../nav/FilterByYear.js"
-import {footerUsers, footerFavorites, filterWallByUser} from "../nav/FilterByUser.js"
+import {footerUsers, filterWallByUser} from "../nav/FilterByUser.js"
+import { filterByLikes } from "../nav/FilterByLikes.js"
+import { PostList } from "../feed/PostList.js"
 
 const mainContainer = document.querySelector(".giffygram")
 
@@ -30,17 +32,21 @@ mainContainer.addEventListener(
     "click",
     (event) => {
         if (event.target.id === "favoritesInFooter") {
-            alert("Hello World!!!")
+            if (event.target.checked != false) {
+                document.querySelector("#postingWall").innerHTML = filterByLikes()
+            } else {
+                document.querySelector("#postingWall").innerHTML = PostList()
+            }
         }
     }
 )
 
 export const footer = () => {
     return `
-    <section class="Footer">
+    <section class="wholeFooter">
     <footer class="footer">
     <div class="yearSelect flexboxFooter footer__item">
-    <p>Post since</p>
+    <div class="footerWords">Post since</div>
     <select id="years" name="yearsDropdown">
             <option id="year21" name='footerYear'>2021</option>
             <option id="year20" name='footerYear'>2020</option>
@@ -51,13 +57,13 @@ export const footer = () => {
     </div>
 
     <div class="usersInFooter footer__item">
-    <p>Posts by user</p>
+    <div class="footerWords">Posts by user</div>
     ${footerUsers()}
     </div>
 
     <div class="footerFavorites footer__item">
-    <p class="favoritesText">Show only favorites</p>
-    ${footerFavorites()}
+    <div class="favoritesText footerWords">Show only favorites</div>
+    <input id="favoritesInFooter" type="checkbox">
     </div>
     </footer>
     </section>
