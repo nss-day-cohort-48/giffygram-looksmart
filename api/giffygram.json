@@ -319,20 +319,6 @@
     {
       "read": true,
       "id": 18
-    },
-    {
-      "userId": 4,
-      "text": "hi",
-      "recipientId": 4,
-      "read": true,
-      "id": 19
-    },
-    {
-      "userId": 4,
-      "text": "hi",
-      "recipientId": 4,
-      "read": false,
-      "id": 21
     }
   ],
   "follows": [
