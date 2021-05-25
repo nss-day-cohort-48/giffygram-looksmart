@@ -29,7 +29,7 @@ export const receivedMessages = () => {
     <h1>Your DMs</h1>
     <button id="closeMessageBox">Close</button>
     </div>
-    <div class="inbox">inbox
+    <div class="inbox"> inbox
     ${inbox.map(inboxList).join("\n")}
     </div>
     <div class="readInbox">read messages
@@ -50,7 +50,15 @@ const inboxList = (message) => {
     }
 
     return `
-    <div class="unreadMessage">${senderName}: ${message.text}
+    <div class="unreadMessage">
+    <div class="messageText">
+    <div>
+    ${senderName}: 
+    </div>
+    <div class="newMessageBody">
+    ${message.text}
+    </div>
+    </div>
     <button id="markAsRead--${message.id}">mark as read</button>
     <button id="deleteMessage--${message.id}">delete</button>
     </div>

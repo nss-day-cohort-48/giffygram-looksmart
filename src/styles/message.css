@@ -23,7 +23,7 @@
 
 .DMDisplay {
     background-color: rgb(112,128,144, .6);
-    padding: 1rem;
+    padding: 2.5rem;
     border-radius: 5%;
     margin: 5rem 1rem 2rem 1rem;
 }
@@ -44,24 +44,46 @@
     justify-content: space-between;
 }
 
+.MessageBottomFlex {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    align-items: center;
+}
+
+.textBodyInput {
+    padding: 4rem;
+}
+
+#recipientSelection {
+    margin-bottom: 3rem;
+}
+
 .inbox {
     background-color: rgb(245, 245, 245, .8);
-    padding: 1rem 15rem 1rem 2rem;
-    text-decoration: underline;
+    padding: 1rem 2rem;
 }
 
 .unreadMessage {
     background-color: blanchedalmond;
     display: flex;
     flex-direction: row wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
+}
+
+.messageText {
+    display: flex;
+    flex-direction: row wrap;
+}
+
+.newMessageBody {
+    padding: 0rem 3rem;
 }
 
 .readInbox {
     background-color: rgb(180, 175, 175, .8);
     padding: 1rem;
     padding: 1rem 15rem 1rem 2rem;
-    text-decoration: underline;
 }
 
 .readMessage {

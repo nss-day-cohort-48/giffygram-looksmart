@@ -8,11 +8,13 @@ export const createMessageForm = () => {
             <h1>Send DM</h1>
             <button id="closeMessageWindow">Close</button>
             </div>
+            <div class="MessageBottomFlex">
             <select id="recipientSelection">
                 ${recipientSelectionList()}
             </select>
             <div class="field">
                 <input type="text" name="messageText" class="textBodyInput" placeholder="Message body"/>
+            </div>
             </div>
             <button id="sendMessage">Send</button>
         </div>
