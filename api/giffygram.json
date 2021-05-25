@@ -77,20 +77,6 @@
       "id": 4
     },
     {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 1,
-      "timestamp": 1621534541361,
-      "id": 5
-    },
-    {
-      "gifTitle": "Test",
-      "gifURL": "https://cdn.vox-cdn.com/thumbor/a5EcHSnHLRfQyzSFvhmPSnibCq0=/0x0:420x314/1400x1400/filters:focal(136x115:202x181):format(gif)/cdn.vox-cdn.com/uploads/chorus_image/image/55279403/tenor.0.gif",
-      "gifStory": "Hello",
-      "id": 6
-    },
-    {
       "title": "Test once more",
       "imageURL": "https://hips.hearstapps.com/pop.h-cdn.co/assets/17/24/1497533116-not-dead.gif?crop=0.8166666666666667xw:1xh;center,top&resize=640:*",
       "description": "123",
@@ -113,46 +99,6 @@
       "userId": 1,
       "timestamp": "2021-05-24T19:40:16.489Z",
       "id": 9
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-24T20:21:29.090Z",
-      "id": 10
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-24T21:18:46.692Z",
-      "id": 11
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T14:38:27.698Z",
-      "id": 12
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T14:38:35.510Z",
-      "id": 13
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T19:12:00.109Z",
-      "id": 14
     }
   ],
   "likes": [
@@ -250,6 +196,36 @@
       "postId": 5,
       "userId": 4,
       "id": 19
+    },
+    {
+      "postId": 7,
+      "userId": 4,
+      "id": 20
+    },
+    {
+      "postId": 4,
+      "userId": 4,
+      "id": 21
+    },
+    {
+      "postId": 1,
+      "userId": 4,
+      "id": 22
+    },
+    {
+      "postId": 3,
+      "userId": 4,
+      "id": 23
+    },
+    {
+      "postId": 7,
+      "userId": 4,
+      "id": 24
+    },
+    {
+      "postId": 8,
+      "userId": 4,
+      "id": 25
     }
   ],
   "messages": [
