@@ -105,34 +105,9 @@
       "imageURL": "",
       "description": "",
       "userId": 4,
-      "timestamp": "2021-05-24T20:21:29.090Z",
-      "id": 10
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-24T21:18:46.692Z",
-      "id": 11
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T14:38:27.698Z",
-      "id": 12
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
       "timestamp": "2021-05-25T14:38:35.510Z",
       "id": 13
     }
-   
   ],
   "likes": [
     {
@@ -144,16 +119,6 @@
       "id": 3,
       "userId": 2,
       "postId": 1
-    },
-    {
-      "userId": 1,
-      "postId": 5,
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "postId": 5,
-      "id": 6
     },
     {
       "userId": 1,
@@ -176,44 +141,24 @@
       "id": 12
     },
     {
-      "postId": 3,
-      "userId": 4,
-      "id": 13
-    },
-    {
-      "postId": 1,
-      "userId": 4,
-      "id": 14
-    },
-    {
-      "postId": 3,
+      "postId": 2,
       "userId": 4,
       "id": 15
     },
     {
-      "postId": 14,
-      "userId": 1,
+      "postId": 9,
+      "userId": 4,
       "id": 16
     },
     {
-      "postId": 14,
-      "userId": 1,
+      "postId": 3,
+      "userId": 4,
       "id": 17
     },
     {
-      "id": 18,
-      "postId": 14,
-      "userId": 1
-    },
-    {
-      "id": 19,
-      "postId": 14,
-      "userId": 1
-    },
-    {
-      "postId": 14,
-      "userId": 1,
-      "id": 20    
+      "postId": 1,
+      "userId": 4,
+      "id": 18
     }
   ],
   "messages": [
@@ -362,22 +307,6 @@
       "recipientId": 1,
       "read": false,
       "id": 23
-
-    },
-    {
-      "userId": 4,
-      "text": "hi",
-      "recipientId": 4,
-      "read": true,
-      "id": 24
-
-    },
-    {
-      "userId": 4,
-      "text": "hello",
-      "recipientId": 4,
-      "read": false,
-      "id": 25
     }
   ],
   "follows": [

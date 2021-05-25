@@ -2,13 +2,11 @@ import { getUsers, sendUserToDatabase } from "../data/provider.js"
 
 export const registrationForm = () => {
     return `
-        <div>
+        <div class="registrationFlex">
             <div>
             Not a member?
             </div>
-
             <button id="registrationButton">Register here!</button>
-
         </div>
     `
 }
@@ -24,19 +22,23 @@ document.addEventListener("click", clickEvent => {
 // HTML-producing component of registration events
 const registerMe = () => {
     return `
+    <div class="giffyFlex">
+        <img id="coverPBimage" src="../images/pb.png">
+        <article id="giffyLogo">Giffygram</article>
+    </div>
     <div class="registrationForm">
     <form>
-        <fieldset>
+        <fieldset class="registerInput">
             <label for="name">Full Name:</label>
-            <input type="text" class="name_input" name="fullname" autofocus placeholder="Full name" />
+            <input type="text" class="name_input" name="fullname" autofocus placeholder=" Full name" />
         </fieldset>
-        <fieldset>
+        <fieldset class="registerInput">
             <label for="email">Email:</label>
-            <input type="text" class="email_input" name="email" autofocus placeholder="Email address" />
+            <input type="text" class="email_input" name="email" autofocus placeholder=" Email address" />
         </fieldset>
-        <fieldset>
+        <fieldset class="registerInput">
             <label for="password">Create Password:</label>
-            <input type="password" class="password_input" name="password" placeholder="Create Password" />
+            <input type="password" class="password_input" name="password" placeholder=" Create Password" />
         </fieldset>
     </form>
     <button id="registerMe">Register me!</button>
