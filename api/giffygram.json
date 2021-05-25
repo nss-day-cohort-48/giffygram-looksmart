@@ -370,13 +370,6 @@
       "recipientId": 1,
       "read": false,
       "id": 23
-    },
-    {
-      "userId": 4,
-      "text": "hi",
-      "recipientId": 4,
-      "read": true,
-      "id": 32
     }
   ],
   "follows": [

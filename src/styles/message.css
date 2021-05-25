@@ -1,19 +1,24 @@
 .DMTopflex {
     display: flex;
-    flex-flow: row;
+    flex-flow: row wrap;
+    justify-content: space-between;
 }
 
 .messageBox {
-    padding-top: 3rem;
+    padding: 3rem 1rem 1rem 1rem;
+    background-color: rgb(112,128,144, .6);;
 }
 
 #closeMessageBox {
-    margin: 1.5rem;
+    margin: 1rem;
+    padding: -.5rem;
 }
 
 .DMDisplay {
     background-color: rgb(112,128,144, .6);
     padding: 1rem;
+    border-radius: 10%;
+    margin: 2rem;
 }
 
 .DMBox {
@@ -25,10 +30,18 @@
     padding: 1rem;
 }
 
-.readInbox {
-    background-color: rgb(124, 124, 124);
-    padding-bottom: 1rem;
+.unreadMessage {
+    background-color: blanchedalmond;
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-around;
 }
+
+.readInbox {
+    background-color: rgb(180, 175, 175, .8);
+    padding: 1rem;
+}
+
 
 /* 
 .directMessage {
