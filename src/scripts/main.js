@@ -2,6 +2,7 @@
 import { GiffyGram } from "./GiffyGram.js"
 import { LoginForm } from "./auth/Login.js"
 import { fetchPosts, fetchUsers, fetchLikes, fetchMessages } from "./data/provider.js"
+import { receivedMessages } from "./friends/DirectMessage.js"
 
 
 const applicationElement = document.querySelector(".giffygram")
@@ -25,4 +26,15 @@ applicationElement.addEventListener(
     CustomEvent => {
         renderApp()
     }
+)
+
+applicationElement.addEventListener(
+    "stateChanged2",
+    CustomEvent => {
+        fetchUsers().then(fetchPosts).then(fetchLikes).then(fetchMessages).then(
+            () => {
+        applicationElement.innerHTML = GiffyGram()
+        document.querySelector(".DMBox").innerHTML = receivedMessages()
+        }
+        )}
 )

@@ -172,7 +172,7 @@ export const markMessageAsRead = (messageId) => {
     })
     .then(
         () => {
-            applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
+            applicationElement.dispatchEvent(new CustomEvent("stateChanged2"))
         }
     )
 }
@@ -181,6 +181,6 @@ export const deleteMessage = (id) => {
     return fetch(`${apiURL}/messages/${id}`, { method: "DELETE"})
         .then(
             () => {
-                applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
+                applicationElement.dispatchEvent(new CustomEvent("stateChanged2"))
             }
                 )}
