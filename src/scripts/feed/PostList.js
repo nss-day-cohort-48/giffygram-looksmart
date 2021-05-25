@@ -36,7 +36,14 @@ export const PostList = () => {
             homepage, otherwise the user has already liked it so display a gold star*/
             const starImage = (findFavorite === undefined ? './images/favorite-star-blank.svg' : './images/favorite-star-yellow.svg')
             const altText = (findFavorite === undefined ? 'blank star' : 'yellow star')
-            const deleteIcon = (post.userId === parseInt(localStorage.getItem("gg_user")) ? './images/block.svg' : 'none')
+            
+            
+            const deleteIcon = () => {
+                if (post.userId === parseInt(localStorage.getItem("gg_user"))) {
+                    return `<img class="actionIcon" id="deletePost--${post.id}" src="./images/block.svg"  alt="Delete Icon"/>`
+                } else return `<br></br>`
+            }
+            
             /*for each post in the posts array(what we are mapping), return HTML to display 
             it's title, image, and description, as well as post details.*/
             return `  <h2> ${post.title} </h2>            
@@ -49,7 +56,7 @@ export const PostList = () => {
             }).join("")
                 }
          <img class="actionIcon" id="favoritePost--${post.id}" src=${starImage} alt=${altText} />
-         <img class="actionIcon" id="deletePost--${post.id}" src=${deleteIcon} alt='Delete Icon'/>
+         ${deleteIcon()}
         `
         })
 
