@@ -1,4 +1,4 @@
-import { getPosts, getUsers, sendFavorite, getLikes, favoriteDeleteRequest } from "../data/provider.js"
+import { getPosts, getUsers, sendFavorite, getLikes, favoriteDeleteRequest, deletePost } from "../data/provider.js"
 
 const mainContainer = document.querySelector(".giffygram")
 
@@ -35,7 +35,14 @@ export const PostList = () => {
             homepage, otherwise the user has already liked it so display a gold star*/
             const starImage = (findFavorite === undefined ? './images/favorite-star-blank.svg' : './images/favorite-star-yellow.svg')
             const altText = (findFavorite === undefined ? 'blank star' : 'yellow star')
-
+            
+            
+            const deleteIcon = () => {
+                if (post.userId === parseInt(localStorage.getItem("gg_user"))) {
+                    return `<img class="actionIcon" id="deletePost--${post.id}" src="./images/block.svg"  alt="Delete Icon"/>`
+                } else return `<br></br>`
+            }
+            
             /*for each post in the posts array(what we are mapping), return HTML to display 
             it's title, image, and description, as well as post details.*/
             return `  <h2> ${post.title} </h2>            
@@ -48,6 +55,7 @@ export const PostList = () => {
             }).join("")
                 }
          <img class="actionIcon" id="favoritePost--${post.id}" src=${starImage} alt=${altText} />
+         ${deleteIcon()}
         `
         })
 
@@ -58,12 +66,10 @@ export const PostList = () => {
     return html
 }
 
-//const actionIcon = document.querySelector(".actionIcon")
-
 
 mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("favoritePost--")) {
-        // pseudo-code: if like entry already exists in database delete it; else send it off
+
         const [, postId] = clickEvent.target.id.split("--")
         const userId = parseInt(localStorage.getItem("gg_user"))
         const likesArray = getLikes()
@@ -82,27 +88,21 @@ mainContainer.addEventListener("click", clickEvent => {
             postId: parseInt(postId),
             userId: parseInt(localStorage.getItem("gg_user"))
         }
+
         sendFavorite(newFavorite)
         alert("Post liked!")
     }
 })
 
 
-
-
-
-
-
-
-/*eventListener to remove post from favorites
 mainContainer.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id.startsWith("favoritePost--")) {
-
-        const [, postId] = clickEvent.target.id.split("--")
-
-        favoriteDeleteRequest(parseInt(postId))
+    if(clickEvent.target.id.startsWith("deletePost--")) {
+      const [, postId] = clickEvent.target.id.split("--")  
+        deletePost(parseInt(postId))
     }
-
 })
 
-*/
+
+
+
+

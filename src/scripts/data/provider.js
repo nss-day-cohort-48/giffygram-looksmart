@@ -88,7 +88,13 @@ export const sendGif = (userGifSubmission) => {
     })
 }
 
-
+export const deletePost = (id) => {
+    return fetch(`${apiURL}/posts/${id}`, { method: "DELETE"})
+        .then(
+            () => {
+                applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
+            }
+                )}
 
 export const fetchLikes = () => {
 
@@ -100,10 +106,11 @@ export const fetchLikes = () => {
     })
 }
 
-export const getLikes = (id) => {
+export const getLikes = () => {
     
     return [...applicationState.likes]
 }
+
 
 //setter function for favoriting posts
 export const sendFavorite = (userPostFavorite) => {
@@ -113,13 +120,15 @@ export const sendFavorite = (userPostFavorite) => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(userPostFavorite)
-    }
+    } 
     return fetch(`${apiURL}/likes`, fetchOptions)
     .then(res => res.json()) 
     .then(() => {
         applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
     })
 }
+
+
 
 //function to delete from favorites upon clicking star.
 export const favoriteDeleteRequest = (id) => {

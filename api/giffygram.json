@@ -99,7 +99,6 @@
       "userId": 1,
       "timestamp": "2021-05-24T19:40:16.489Z",
       "id": 9
-
     },
     {
       "title": "",
@@ -132,120 +131,8 @@
       "userId": 4,
       "timestamp": "2021-05-25T14:38:35.510Z",
       "id": 13
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T18:48:31.490Z",
-      "id": 14
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T20:10:19.829Z",
-      "id": 15
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T20:10:24.014Z",
-      "id": 16
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T20:10:36.329Z",
-      "id": 17
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T20:14:17.201Z",
-      "id": 18
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T20:14:33.205Z",
-      "id": 19
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T20:14:35.675Z",
-      "id": 20
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T20:15:56.369Z",
-      "id": 21
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T20:18:27.540Z",
-      "id": 22
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T20:22:17.295Z",
-      "id": 23
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T20:30:24.031Z",
-      "id": 24
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T20:33:05.896Z",
-      "id": 25
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T20:34:27.039Z",
-      "id": 26
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T20:35:15.591Z",
-      "id": 27
-
     }
+   
   ],
   "likes": [
     {
@@ -291,12 +178,42 @@
     {
       "postId": 3,
       "userId": 4,
+      "id": 13
+    },
+    {
+      "postId": 1,
+      "userId": 4,
+      "id": 14
+    },
+    {
+      "postId": 3,
+      "userId": 4,
       "id": 15
     },
     {
-      "postId": 9,
-      "userId": 4,
+      "postId": 14,
+      "userId": 1,
       "id": 16
+    },
+    {
+      "postId": 14,
+      "userId": 1,
+      "id": 17
+    },
+    {
+      "id": 18,
+      "postId": 14,
+      "userId": 1
+    },
+    {
+      "id": 19,
+      "postId": 14,
+      "userId": 1
+    },
+    {
+      "postId": 14,
+      "userId": 1,
+      "id": 20    
     }
   ],
   "messages": [
@@ -453,6 +370,7 @@
       "recipientId": 4,
       "read": true,
       "id": 24
+
     },
     {
       "userId": 4,
@@ -460,7 +378,6 @@
       "recipientId": 4,
       "read": false,
       "id": 25
-
     }
   ],
   "follows": [
