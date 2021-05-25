@@ -14,9 +14,9 @@ export const filterByLikes= () => {
             filteredLikes.push(likes[i])
         }
     }
-    for (let i = 0; i < likes.length; i++) {
+    for (let i = 0; i < filteredLikes.length; i++) {
         for(let n = 0; n < posts.length; n++) {
-            if (likes[i].postId === posts[n].id) {
+            if (filteredLikes[i].postId === posts[n].id) {
                 filteredPosts.push(posts[n])
             }
         }
