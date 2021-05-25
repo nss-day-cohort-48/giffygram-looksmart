@@ -104,16 +104,6 @@ export const fetchLikes = () => {
     })
 }
 
-export const setChosenLike = (id) => {
-    const doesExist = applicationState.likes.indexOf(id)
-    if (doesExist < 0) {
-        applicationState.likes.push(id)
-    }
-    else {
-        applicationState.likes.splice(doesExist, 1)
-    }
-}
-
 export const getLikes = () => {
     
     return [...applicationState.likes]
@@ -128,13 +118,15 @@ export const sendFavorite = (userPostFavorite) => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(userPostFavorite)
-    }
+    } 
     return fetch(`${apiURL}/likes`, fetchOptions)
     .then(res => res.json()) 
     .then(() => {
         applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
     })
 }
+
+
 
 //function to delete from favorites upon clicking star.
 export const favoriteDeleteRequest = (id) => {

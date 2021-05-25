@@ -1,4 +1,4 @@
-import { getPosts, getUsers, sendFavorite, getLikes, favoriteDeleteRequest, deletePost, setChosenLike } from "../data/provider.js"
+import { getPosts, getUsers, sendFavorite, getLikes, favoriteDeleteRequest, deletePost } from "../data/provider.js"
 
 const mainContainer = document.querySelector(".giffygram")
 
@@ -70,15 +70,17 @@ export const PostList = () => {
 
 mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("favoritePost--")) {
-        
+        const likes = getLikes()
         const [, postId] = clickEvent.target.id.split("--")
         const newFavorite = {
-
             postId: parseInt(postId),
             userId: parseInt(localStorage.getItem("gg_user"))
         }
         
-        setChosenLike(newFavorite)
+
+       if ((likes.find(like => like.postId === parseInt(postId)) && likes.find(like2 => like2.userId === parseInt(localStorage.getItem("gg_user")))) === undefined) {
+       sendFavorite(newFavorite)
+       } else favoriteDeleteRequest(newFavorite)
 
         //alert(`Added to your Favorites`)
     }
@@ -96,13 +98,13 @@ mainContainer.addEventListener("click", clickEvent => {
 
 
 
-/*eventListener to remove post from favorites
-mainContainer.addEventListener("click", clickEvent => {
+//eventListener to remove post from favorites
+/*mainContainer.addEventListener("change", clickEvent => {
     if (clickEvent.target.id.startsWith("favoritePost--")) {
-
+        const likes = getLikes()
         const [, postId] = clickEvent.target.id.split("--")
 
-        favoriteDeleteRequest(parseInt(postId))
+        if (likes.indexOf(postId) > -1 ? favoriteDeleteRequest(parseInt(postId)) :  
     }
 
 })
