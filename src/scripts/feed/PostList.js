@@ -29,7 +29,6 @@ export const PostList = () => {
             where the postId of the current user favorites is equal to the id 
             of the individual post*/
             const findFavorite = likesInfo.find(postLike => {
-
                 return (postLike.postId === post.id)
             })
             /*if the postId of the user favorites != post.id, then display a blank star on the 
@@ -64,16 +63,27 @@ export const PostList = () => {
 
 mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id.startsWith("favoritePost--")) {
-
+        // pseudo-code: if like entry already exists in database delete it; else send it off
         const [, postId] = clickEvent.target.id.split("--")
-        const newFavorite = {
+        const userId = parseInt(localStorage.getItem("gg_user"))
+        const likesArray = getLikes()
+        const postID = parseInt(postId)
 
+        for (let i = 0; i < likesArray.length; i++) {
+            if (likesArray[i].postId === postID && likesArray[i].userId === userId) {
+                const likeId = likesArray[i].id
+                favoriteDeleteRequest(likeId)
+                alert("Favorite deleted!")
+                document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
+                return
+            }
+        }
+        const newFavorite = {
             postId: parseInt(postId),
             userId: parseInt(localStorage.getItem("gg_user"))
         }
         sendFavorite(newFavorite)
-
-        //alert(`Added to your Favorites`)
+        alert("Post liked!")
     }
 })
 
