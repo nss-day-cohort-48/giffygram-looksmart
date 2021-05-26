@@ -59,22 +59,19 @@ document.addEventListener("click", clickEvent => {
         const email = document.querySelector("input[name='email']").value
         const password = document.querySelector("input[name='password']").value
 
-        // check to see whether user input data
-
+        // check to see whether user input data is blank
         if (userName === "") {
             const inputField = document.querySelector(".name_input")
             inputField.style.background = "#fc7878"
             alert("Please input data in all fields")
             return
         }
-
         if (email === "") {
             const inputField = document.querySelector(".email_input")
             inputField.style.background = "#fc7878"
             alert("Please input data in all fields")
             return
         }
-
         if (password === "") {
             const inputField = document.querySelector(".password_input")
             inputField.style.background = "#fc7878"
@@ -83,13 +80,11 @@ document.addEventListener("click", clickEvent => {
         }
 
         // check to see whether an account with these credentials already exists in database
-
         const usersArray = getUsers()
-
         for (let i = 0; i < usersArray.length; i++) {
             if (usersArray[i].name === userName || usersArray[i].email === email) {
                 alert("User with this name and/or email already exists in database")
-                document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
+                document.querySelector(".giffygram").innerHTML = registerMe()
                 return
             } 
         }

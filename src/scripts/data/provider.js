@@ -89,9 +89,7 @@ export const deletePost = (id) => {
                 )}
 
 export const fetchLikes = () => {
-
     return fetch(`${apiURL}/likes`)
-
     .then(response => response.json())
     .then(likes =>{
         applicationState.likes = likes
@@ -120,7 +118,8 @@ export const sendFavorite = (userPostFavorite) => {
 }
 
 
-//function to delete from favorites upon clicking star.
+//function to delete from favorites upon clicking star
+// passes in argument of LikeId
 export const favoriteDeleteRequest = (id) => {
     return fetch(`${apiURL}/likes/${id}`, {method:"DELETE"})
     .then(

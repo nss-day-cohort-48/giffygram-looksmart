@@ -8,15 +8,15 @@ import { receivedMessages } from "./friends/DirectMessage.js"
 const applicationElement = document.querySelector(".giffygram")
 
 // this is the main rendering function, which fetches from API, then shows either login form or the main site
-// before it renders, it checks whether a userId is saved in localStorage (lines 15 and 16 etc)
+// before rendering, it checks whether a userId is saved in localStorage; if one is, it logs you in; else, it displays the login form
 export const renderApp = () => {
     fetchUsers().then(fetchPosts).then(fetchMessages).then(fetchLikes).then(
         () => {
         const user = parseInt(localStorage.getItem("gg_user"))
         if (user) {
-            applicationElement.innerHTML = GiffyGram()
+            document.querySelector(".giffygram").innerHTML = GiffyGram()
         } else {
-            applicationElement.innerHTML = LoginForm()
+            document.querySelector(".giffygram").innerHTML = LoginForm()
         }}
     )
 }
@@ -30,7 +30,7 @@ applicationElement.addEventListener(
     }
 )
 
-// secondary event listener for CustomEvent2, which re-renders app with DM box showing
+// secondary event listener, which re-renders the site and then shows the DM box
 applicationElement.addEventListener(
     "stateChanged2",
     CustomEvent => {
