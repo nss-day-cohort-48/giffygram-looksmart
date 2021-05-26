@@ -77,7 +77,8 @@ const readList = (message) => {
     }
 
     return `
-    <div class="readMessage">${senderName}: ${message.text}
+    <div class="readMessage">
+    <div>${senderName}: </div><div class="readMessageBody">${message.text}</div>
     <button id="deleteMessage--${message.id}">delete</button>
     </div>
     `
