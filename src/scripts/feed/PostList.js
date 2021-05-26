@@ -25,17 +25,18 @@ export const PostList = () => {
             let newDate = post.timestamp;
             let upDate = new Date(newDate).toLocaleDateString(`en-US`);
 
-            /*return the value of the first element in userLikes array
-            where the postId of the current user favorites is equal to the id 
-            of the individual post. i.e for the userLikes array, return the first object where the postId
-            is equal to the post.id*/
-            const findFavorite = userLikes.find(postLike => {
-                return (postLike.postId === post.id)
+            /*iterate through the userLikes array using the find method. This will return
+            the first object of the userLikes arrary where the value of the postId 
+            of the individual likedPost object is equal to the value of the id key 
+            of the currently mapped post object. If no object is found that matches,
+            find will return undefined. */
+            const findFavorite = userLikes.find(likedPost => {
+                return (likedPost.postId === post.id)
             })
 
 
 
-            /*if the postId of the user favorites != post.id, then display a blank star on the 
+            /*if the postId of the user's likes != post.id, then display a blank star on the 
             homepage, otherwise the user has already liked it so display a gold star*/
             const starImage = (findFavorite === undefined ? './images/favorite-star-blank.svg' : './images/favorite-star-yellow.svg')
             const altText = (findFavorite === undefined ? 'blank star' : 'yellow star')
