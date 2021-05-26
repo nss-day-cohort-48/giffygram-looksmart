@@ -27,7 +27,8 @@ export const PostList = () => {
 
             /*return the value of the first element in likesInfo array
             where the postId of the current user favorites is equal to the id 
-            of the individual post*/
+            of the individual post. i.e for the likesInfo array, return the first object where the postId
+            is equal to the post.id*/
             const findFavorite = likesInfo.find(postLike => {
                 return (postLike.postId === post.id)
             })
@@ -36,12 +37,6 @@ export const PostList = () => {
             const starImage = (findFavorite === undefined ? './images/favorite-star-blank.svg' : './images/favorite-star-yellow.svg')
             const altText = (findFavorite === undefined ? 'blank star' : 'yellow star')
             
-            
-            const deleteIcon = () => {
-                if (post.userId === parseInt(localStorage.getItem("gg_user"))) {
-                    return `<img class="actionIcon" id="deletePost--${post.id}" src="./images/block.svg"  alt="Delete Icon"/>`
-                } else return `<br></br>`
-            }
             
             /*for each post in the posts array(what we are mapping), return HTML to display 
             it's title, image, and description, as well as post details.*/
@@ -55,7 +50,7 @@ export const PostList = () => {
             }).join("")
                 }
          <img class="actionIcon" id="favoritePost--${post.id}" src=${starImage} alt=${altText} />
-         ${deleteIcon()}
+         ${deleteIcon(post)}
         `
         })
 
@@ -64,6 +59,12 @@ export const PostList = () => {
     html += "</div>"
 
     return html
+}
+
+const deleteIcon = (post) => {
+    if (post.userId === parseInt(localStorage.getItem("gg_user"))) {
+        return `<img class="actionIcon" id="deletePost--${post.id}" src="./images/block.svg"  alt="Delete Icon"/>`
+    } else return `<br></br>`
 }
 
 
@@ -75,9 +76,9 @@ mainContainer.addEventListener("click", clickEvent => {
         const likesArray = getLikes()
         const postID = parseInt(postId)
 
-        for (let i = 0; i < likesArray.length; i++) {
-            if (likesArray[i].postId === postID && likesArray[i].userId === userId) {
-                const likeId = likesArray[i].id
+        for (const like of likesArray) {
+            if (like.postId === postID && like.userId === userId) {
+                const likeId = like.id
                 favoriteDeleteRequest(likeId)
                 alert("Favorite deleted!")
                 document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
