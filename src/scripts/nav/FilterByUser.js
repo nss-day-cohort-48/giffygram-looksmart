@@ -14,13 +14,6 @@ export const footerUsers = () => {
     </select>`
 }
 
-// export const footerFavorites = () => {
-    
-//     return `
-//     <input id="favoritesInFooter" type="checkbox">
-//     `
-// }
-
 export const filterWallByUser = (userID) => {
     const posts = getPosts()
     const filteredPosts = []
@@ -31,6 +24,7 @@ export const filterWallByUser = (userID) => {
         }
     }
 
+    //TODO: house this code in an independent function or two
     const userId = parseInt(localStorage.getItem("gg_user"))
     const likes = getLikes()
 
