@@ -1,4 +1,4 @@
-import { getPosts, getUsers, sendFavorite, getLikes, favoriteDeleteRequest, deletePost } from "../data/provider.js"
+import { getUsers, sendFavorite, getLikes, favoriteDeleteRequest, deletePost } from "../data/provider.js"
 
 const mainContainer = document.querySelector(".giffygram")
 
@@ -30,16 +30,21 @@ export const PostList = (posts) => {
 
             const starImage = favoriteIcon(post)
 
-            return `  <h2> ${post.title} </h2>            
-             <img src=" ${post.imageURL}"> 
-             <div> ${post.description}</div> 
-            ${users.map(user => {
-                if (user.id === post.userId) {
-                    return `<div> Posted by ${user.name} on ${upDate} </div>`
-                }
-            }).join("")}
-         <img class="actionIcon" id="favoritePost--${post.id}" src=${starImage} />
-         ${deleteIcon(post)}
+            return `
+            <div class="individPost">
+                <h2> ${post.title} </h2>            
+                <img class="postGIF" src=" ${post.imageURL}"> 
+                <div class="postDescript"> ${post.description}</div>
+                <div class="postedByFlex">
+                ${users.map(user => {
+                    if (user.id === post.userId) {
+                        return `<div class="postedBy"> Posted by ${user.name} on ${upDate} </div>`
+                    }
+                }).join("")}
+                <img class="actionIcon" id="favoritePost--${post.id}" src=${starImage} />
+                ${deleteIcon(post)}
+                </div>
+            </div>
         `
         })
     html += listPosts.join("")
@@ -68,7 +73,7 @@ const favoriteIcon = (post) => {
 
 const deleteIcon = (post) => {
     if (post.userId === parseInt(localStorage.getItem("gg_user"))) {
-        return `<img class="actionIcon" id="deletePost--${post.id}" src="./images/block.svg"  alt="Delete Icon"/>`
+        return `<img class="actionIcon deletePostButton" id="deletePost--${post.id}" src="./images/block.svg"  alt="Delete Icon"/>`
     } else return `<br></br>`
 }
 

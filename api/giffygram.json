@@ -113,14 +113,6 @@
       "userId": 1,
       "timestamp": "2021-05-25T19:26:00.360Z",
       "id": 14
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T20:35:15.591Z",
-      "id": 27
     }
   ],
   "likes": [
@@ -143,11 +135,6 @@
       "userId": 1,
       "postId": 4,
       "id": 8
-    },
-    {
-      "postId": 2,
-      "userId": 4,
-      "id": 10
     },
     {
       "postId": 4,
@@ -193,16 +180,6 @@
       "postId": 14,
       "userId": 1,
       "id": 20
-    },
-    {
-      "postId": 9,
-      "userId": 4,
-      "id": 21
-    },
-    {
-      "postId": 1,
-      "userId": 4,
-      "id": 22
     },
     {
       "postId": 6,
