@@ -2,47 +2,34 @@ import { getPosts, getUsers, sendFavorite, getLikes, favoriteDeleteRequest, dele
 
 const mainContainer = document.querySelector(".giffygram")
 
-export const PostList = () => {
-    const posts = getPosts()
+export const PostList = (posts) => {
     const users = getUsers()
-    const likes = getLikes()
-
-    /*iterate the 'likes' array and, using filter, returns
-    a new array, just including the likes for the
-    current user.*/
-    const userLikes = likes.filter(like => {
-        return (parseInt(localStorage.getItem("gg_user")) === like.userId)
-
-    })
-
-
+  
     let html = "<div id='postingWall'>"
-
-
     const listPosts = posts.map(
         post => {
 
             let newDate = post.timestamp;
             let upDate = new Date(newDate).toLocaleDateString(`en-US`);
 
-            /*return the value of the first element in userLikes array
-            where the postId of the current user favorites is equal to the id 
-            of the individual post. i.e for the userLikes array, return the first object where the postId
-            is equal to the post.id*/
-            const findFavorite = userLikes.find(postLike => {
-                return (postLike.postId === post.id)
-            })
+            // /*return the value of the first element in userLikes array
+            // where the postId of the current user favorites is equal to the id 
+            // of the individual post. i.e for the userLikes array, return the first object where the postId
+            // is equal to the post.id*/
+            // // const findFavorite = userLikes.find(postLike => {
+            // //     return (postLike.postId === post.id)
+            // // })
 
-
-
-            /*if the postId of the user favorites != post.id, then display a blank star on the 
-            homepage, otherwise the user has already liked it so display a gold star*/
-            const starImage = (findFavorite === undefined ? './images/favorite-star-blank.svg' : './images/favorite-star-yellow.svg')
-            const altText = (findFavorite === undefined ? 'blank star' : 'yellow star')
+            // /*if the postId of the user favorites != post.id, then display a blank star on the 
+            // homepage, otherwise the user has already liked it so display a gold star*/
+            // // const starImage = (findFavorite === undefined ? './images/favorite-star-blank.svg' : './images/favorite-star-yellow.svg')
+            // // const altText = (findFavorite === undefined ? 'blank star' : 'yellow star')
             
-            
-            /*for each post in the posts array(what we are mapping), return HTML to display 
-            it's title, image, and description, as well as post details.*/
+            // /*for each post in the posts array(what we are mapping), return HTML to display 
+            // it's title, image, and description, as well as post details.*/
+
+            const starImage = favoriteIcon(post)
+
             return `  <h2> ${post.title} </h2>            
              <img src=" ${post.imageURL}"> 
              <div> ${post.description}</div> 
@@ -51,16 +38,32 @@ export const PostList = () => {
                     return `<div> Posted by ${user.name} on ${upDate} </div>`
                 }
             }).join("")}
-         <img class="actionIcon" id="favoritePost--${post.id}" src=${starImage} alt=${altText} />
+         <img class="actionIcon" id="favoritePost--${post.id}" src=${starImage} />
          ${deleteIcon(post)}
         `
         })
-
-
     html += listPosts.join("")
     html += "</div>"
-
     return html
+}
+
+const favoriteIcon = (post) => {
+    /*iterate the 'likes' array and, using filter, returns
+    a new array, just including the likes for the
+    current user.*/
+    const likes = getLikes()
+    const userLikes = likes.filter(like => {
+        return (parseInt(localStorage.getItem("gg_user")) === like.userId)
+
+    })
+    const findFavorite = userLikes.find(postLike => {
+        return (postLike.postId === post.id)
+    })
+    if (findFavorite) {
+        return './images/favorite-star-yellow.svg'
+    } else {
+        return './images/favorite-star-blank.svg'
+    }
 }
 
 const deleteIcon = (post) => {
