@@ -99,7 +99,6 @@
       "userId": 1,
       "timestamp": "2021-05-24T19:40:16.489Z",
       "id": 9
-
     },
     {
       "title": "",
@@ -244,7 +243,6 @@
       "userId": 4,
       "timestamp": "2021-05-25T20:35:15.591Z",
       "id": 27
-
     }
   ],
   "likes": [
@@ -257,16 +255,6 @@
       "id": 3,
       "userId": 2,
       "postId": 1
-    },
-    {
-      "userId": 1,
-      "postId": 5,
-      "id": 5
-    },
-    {
-      "userId": 1,
-      "postId": 5,
-      "id": 6
     },
     {
       "userId": 1,
@@ -445,7 +433,6 @@
       "recipientId": 1,
       "read": false,
       "id": 23
-
     },
     {
       "userId": 4,
@@ -460,7 +447,6 @@
       "recipientId": 4,
       "read": false,
       "id": 25
-
     }
   ],
   "follows": [
