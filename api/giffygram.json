@@ -101,12 +101,12 @@
       "id": 9
     },
     {
-      "title": "",
-      "imageURL": "",
-      "description": "",
+      "title": "1",
+      "imageURL": "2",
+      "description": "3",
       "userId": 4,
-      "timestamp": "2021-05-25T14:38:35.510Z",
-      "id": 13
+      "timestamp": "2021-05-26T16:36:52.545Z",
+      "id": 14
     }
   ],
   "likes": [
@@ -141,24 +141,9 @@
       "id": 12
     },
     {
-      "postId": 2,
-      "userId": 4,
-      "id": 15
-    },
-    {
-      "postId": 3,
-      "userId": 4,
-      "id": 17
-    },
-    {
-      "postId": 4,
-      "userId": 4,
-      "id": 19
-    },
-    {
       "postId": 1,
       "userId": 4,
-      "id": 20
+      "id": 13
     }
   ],
   "messages": [
@@ -307,6 +292,27 @@
       "recipientId": 1,
       "read": false,
       "id": 23
+    },
+    {
+      "userId": 4,
+      "text": "hi",
+      "recipientId": 1,
+      "read": false,
+      "id": 26
+    },
+    {
+      "userId": 4,
+      "text": "hi",
+      "recipientId": 2,
+      "read": false,
+      "id": 27
+    },
+    {
+      "userId": 4,
+      "text": "hi",
+      "recipientId": 4,
+      "read": false,
+      "id": 28
     }
   ],
   "follows": [

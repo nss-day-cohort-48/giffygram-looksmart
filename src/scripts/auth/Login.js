@@ -29,7 +29,8 @@ document.addEventListener("click", clickEvent => {
                 foundUser = user
             }
         }
-
+        // saves the userId in local storage in local memory (associated with Chrome)
+        // dispatches customEvent to eventListener on main ("stateChanged")
         if (foundUser !== null) {
             localStorage.setItem("gg_user", foundUser.id)
             document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
