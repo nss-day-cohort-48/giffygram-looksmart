@@ -19,6 +19,7 @@ document.addEventListener("click", clickEvent => {
     }
 })
 
+// Event listener refreshes the page (renderApp())
 document.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "coverPBimage") {
         document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))

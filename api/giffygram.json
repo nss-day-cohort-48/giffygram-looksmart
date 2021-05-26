@@ -101,14 +101,6 @@
       "id": 9
     },
     {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T14:38:35.510Z",
-      "id": 13
-    },
-    {
       "title": "1",
       "imageURL": "2",
       "description": "3",
@@ -149,24 +141,9 @@
       "id": 12
     },
     {
-      "postId": 2,
+      "postId": 1,
       "userId": 4,
-      "id": 15
-    },
-    {
-      "postId": 9,
-      "userId": 4,
-      "id": 21
-    },
-    {
-      "postId": 4,
-      "userId": 4,
-      "id": 24
-    },
-    {
-      "postId": 7,
-      "userId": 4,
-      "id": 25
+      "id": 13
     }
   ],
   "messages": [
@@ -319,20 +296,6 @@
     {
       "userId": 4,
       "text": "hi",
-      "recipientId": 4,
-      "read": true,
-      "id": 24
-    },
-    {
-      "userId": 4,
-      "text": "hi",
-      "recipientId": 4,
-      "read": false,
-      "id": 25
-    },
-    {
-      "userId": 4,
-      "text": "hi",
       "recipientId": 1,
       "read": false,
       "id": 26
@@ -340,7 +303,7 @@
     {
       "userId": 4,
       "text": "hi",
-      "recipientId": 4,
+      "recipientId": 2,
       "read": false,
       "id": 27
     },

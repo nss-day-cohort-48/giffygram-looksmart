@@ -63,6 +63,7 @@ document.addEventListener("click", clickEvent => {
     }
 })
 
+// click event to open DM box
 document.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "messageBox") {
         document.querySelector(".DMBox").innerHTML = receivedMessages()

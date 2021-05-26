@@ -1,5 +1,6 @@
 import { getUsers, sendMessageToDatabase } from "../data/provider.js"
 
+// empty HTML string to work off of for message-sending component
 export const messageBox = () => {
     return `<div class="messageBox"></div>`
 }
@@ -33,7 +34,6 @@ const recipientSelectionList = () => {
         ${usersArray.map(usersList).join("\n")}
     `
 }
-
 const usersList = (user) => {
     return `<option value="${user.id}">${user.name}</option>`
 }
@@ -57,7 +57,6 @@ document.addEventListener("click", clickEvent => {
         // turns background color red if it is
         if (textBody === "") {
             document.querySelector(".textBodyInput").style.background = "#fc7878"
-            alert("Please add a message!")
             return
         }
         // sends user object to API
