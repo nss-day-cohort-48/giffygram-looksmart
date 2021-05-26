@@ -159,6 +159,16 @@
       "postId": 1,
       "userId": 4,
       "id": 20
+    },
+    {
+      "postId": 9,
+      "userId": 4,
+      "id": 21
+    },
+    {
+      "postId": 7,
+      "userId": 4,
+      "id": 22
     }
   ],
   "messages": [
@@ -307,6 +317,41 @@
       "recipientId": 1,
       "read": false,
       "id": 23
+    },
+    {
+      "userId": 4,
+      "text": "hi",
+      "recipientId": 4,
+      "read": true,
+      "id": 24
+    },
+    {
+      "userId": 4,
+      "text": "hi",
+      "recipientId": 4,
+      "read": false,
+      "id": 25
+    },
+    {
+      "userId": 4,
+      "text": "hi",
+      "recipientId": 1,
+      "read": false,
+      "id": 26
+    },
+    {
+      "userId": 4,
+      "text": "hi",
+      "recipientId": 4,
+      "read": false,
+      "id": 27
+    },
+    {
+      "userId": 4,
+      "text": "hi",
+      "recipientId": 4,
+      "read": false,
+      "id": 28
     }
   ],
   "follows": [

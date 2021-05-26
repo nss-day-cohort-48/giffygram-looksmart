@@ -5,8 +5,7 @@ import { postButton } from "./feed/Post.js"
 import { DMBox } from "./friends/DirectMessage.js"
 import { messageBox } from "./message/MessageForm.js"
 
-
-
+// main HTML rendering function
 export const GiffyGram = () => {
     return `
     ${NavBar()}
