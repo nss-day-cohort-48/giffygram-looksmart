@@ -314,7 +314,6 @@
       "postId": 1,
       "userId": 4,
       "id": 17
-      "id": 13
     },
     {
       "postId": 1,
@@ -519,7 +518,6 @@
       "recipientId": 4,
       "read": false,
       "id": 25
-      "id": 28
     }
   ],
   "follows": [
