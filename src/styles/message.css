@@ -1,3 +1,12 @@
+.asideWall {
+    position: fixed;
+    margin-left: 40rem;
+}
+
+/* .messageBox {
+    position: fixed;
+} */
+
 .DMTopflex {
     display: flex;
     flex-flow: row wrap;
@@ -8,7 +17,7 @@
     margin: 5rem 1rem 0rem 1rem;
     padding: 1rem 2.5rem 2.5rem 2.5rem;
     background-color: rgb(112,128,144, .6);
-    border-radius: 5%;
+    border-radius: 10px;
 }
 
 #closeMessageBox {
@@ -24,7 +33,7 @@
 .DMDisplay {
     background-color: rgb(112,128,144, .6);
     padding: 2.5rem;
-    border-radius: 5%;
+    border-radius: 10px;
     margin: 5rem 1rem 2rem 1rem;
 }
 
@@ -47,7 +56,6 @@
 .MessageBottomFlex {
     display: flex;
     flex-direction: column;
-    padding: 3rem;
     align-items: center;
 }
 
@@ -56,7 +64,7 @@
 }
 
 #recipientSelection {
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .inbox {
@@ -73,7 +81,7 @@
 
 .messageText {
     display: flex;
-    flex-direction: row wrap;
+    flex-direction: row;
 }
 
 .newMessageBody {
@@ -82,14 +90,23 @@
 
 .readInbox {
     background-color: rgb(180, 175, 175, .8);
-    padding: 1rem;
-    padding: 1rem 15rem 1rem 2rem;
+    padding: 0rem 5rem 1rem 4rem;
 }
 
 .readMessage {
     background-color: rgb(187, 223, 238, .8);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
+.readMessageBody {
+    padding: 0rem 4rem 0rem 10rem;
+}
+
+#sendMessage {
+    margin-top: 1rem;
+}
 /* 
 .directMessage {
     padding: 0.75rem 2rem 2rem 2rem;

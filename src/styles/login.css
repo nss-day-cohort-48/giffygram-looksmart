@@ -1,0 +1,51 @@
+.loginForm {
+    margin: 0 25%;
+    margin-top: 3rem;
+    background-color: rgb(240, 240, 240);
+    padding: 1rem;
+    border: slategray solid .2rem;
+    border-radius: 10px;
+}
+
+.registrationFlex {
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-evenly;
+    margin-top: 3rem;
+}
+
+#coverPBimage {
+    height: 4rem;
+}
+
+.giffyFlex {
+    display: flex;
+    flex-wrap: row wrap;
+    border-bottom: 1px solid lightblue;
+    padding: 0.5em 0 0.5em 1em;
+    margin-bottom: 2em;
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+.registerFlex {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.registerInput {
+    margin-bottom: 1rem;
+}
+
+#registrationButton {
+    background-color: rgb(240, 240, 240);
+}
+
+.registrationForm {
+    background-color: rgb(240, 240, 240);
+    margin: 3rem;
+    padding: 1rem;
+    border: slategray solid .2rem;
+    border-radius: 10px;
+}

@@ -9,7 +9,8 @@
 }
 
 .newPost {
-    margin: 5rem;
+    margin-top: 6rem;
+    margin-left: 5rem;
 }
 
 .inputTitle, .inputGifURL, .inputStory {
