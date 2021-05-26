@@ -7,10 +7,10 @@ export const PostList = () => {
     const users = getUsers()
     const likes = getLikes()
 
-    /*iterate the 'likes' array and returns
-    a new array just including that likes for the
-    current user*/
-    const likesInfo = likes.filter(like => {
+    /*iterate the 'likes' array and, using filter, returns
+    a new array, just including the likes for the
+    current user.*/
+    const userLikes = likes.filter(like => {
         return (parseInt(localStorage.getItem("gg_user")) === like.userId)
 
     })
@@ -25,10 +25,11 @@ export const PostList = () => {
             let newDate = post.timestamp;
             let upDate = new Date(newDate).toLocaleDateString(`en-US`);
 
-            /*return the value of the first element in likesInfo array
+            /*return the value of the first element in userLikes array
             where the postId of the current user favorites is equal to the id 
-            of the individual post*/
-            const findFavorite = likesInfo.find(postLike => {
+            of the individual post. i.e for the userLikes array, return the first object where the postId
+            is equal to the post.id*/
+            const findFavorite = userLikes.find(postLike => {
                 return (postLike.postId === post.id)
             })
 
@@ -39,12 +40,6 @@ export const PostList = () => {
             const starImage = (findFavorite === undefined ? './images/favorite-star-blank.svg' : './images/favorite-star-yellow.svg')
             const altText = (findFavorite === undefined ? 'blank star' : 'yellow star')
             
-            
-            const deleteIcon = () => {
-                if (post.userId === parseInt(localStorage.getItem("gg_user"))) {
-                    return `<img class="actionIcon" id="deletePost--${post.id}" src="./images/block.svg"  alt="Delete Icon"/>`
-                } else return `<br></br>`
-            }
             
             /*for each post in the posts array(what we are mapping), return HTML to display 
             it's title, image, and description, as well as post details.*/
@@ -57,7 +52,7 @@ export const PostList = () => {
                 }
             }).join("")}
          <img class="actionIcon" id="favoritePost--${post.id}" src=${starImage} alt=${altText} />
-         ${deleteIcon()}
+         ${deleteIcon(post)}
         `
         })
 
@@ -66,6 +61,12 @@ export const PostList = () => {
     html += "</div>"
 
     return html
+}
+
+const deleteIcon = (post) => {
+    if (post.userId === parseInt(localStorage.getItem("gg_user"))) {
+        return `<img class="actionIcon" id="deletePost--${post.id}" src="./images/block.svg"  alt="Delete Icon"/>`
+    } else return `<br></br>`
 }
 
 
@@ -77,11 +78,13 @@ mainContainer.addEventListener("click", clickEvent => {
         const userId = parseInt(localStorage.getItem("gg_user"))
         const likesArray = getLikes()
 
+
         // this catches to see whether post is already liked;
         // if it is, the clickEvent deletes the like
         for (let i = 0; i < likesArray.length; i++) {
             if (likesArray[i].postId === postID && likesArray[i].userId === userId) {
                 const likeId = likesArray[i].id
+
                 favoriteDeleteRequest(likeId)
                 document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
                 return
