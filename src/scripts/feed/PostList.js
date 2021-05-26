@@ -7,10 +7,10 @@ export const PostList = () => {
     const users = getUsers()
     const likes = getLikes()
 
-    /*iterate the 'likes' array and returns
-    a new array just including that likes for the
-    current user*/
-    const likesInfo = likes.filter(like => {
+    /*iterate the 'likes' array and, using filter, returns
+    a new array, just including the likes for the
+    current user.*/
+    const userLikes = likes.filter(like => {
         return (parseInt(localStorage.getItem("gg_user")) === like.userId)
 
     })
@@ -25,11 +25,11 @@ export const PostList = () => {
             let newDate = post.timestamp;
             let upDate = new Date(newDate).toLocaleDateString(`en-US`);
 
-            /*return the value of the first element in likesInfo array
+            /*return the value of the first element in userLikes array
             where the postId of the current user favorites is equal to the id 
-            of the individual post. i.e for the likesInfo array, return the first object where the postId
+            of the individual post. i.e for the userLikes array, return the first object where the postId
             is equal to the post.id*/
-            const findFavorite = likesInfo.find(postLike => {
+            const findFavorite = userLikes.find(postLike => {
                 return (postLike.postId === post.id)
             })
             /*if the postId of the user favorites != post.id, then display a blank star on the 
