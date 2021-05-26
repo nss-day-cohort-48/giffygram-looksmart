@@ -20,7 +20,7 @@ export const PostEntry = () => {
     `
 return html
 }
-
+// click event to send GIF to API
 document.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "submitGif") {
 
@@ -28,7 +28,7 @@ document.addEventListener("click", clickEvent => {
         const usergifURL= document.querySelector("input[name='gifURL']").value
         const usergifStory = document.querySelector("input[name='gifStory']").value
         const userId = parseInt(localStorage.getItem("gg_user"))
-        
+        // checkpoints to see whether input fields are blank
         if (usergifTitle === "") {
             document.querySelector("input[name='gifTitle']").style.background = "#fc7878"
             alert("Please enter title.")
@@ -42,6 +42,7 @@ document.addEventListener("click", clickEvent => {
             alert("Please enter story to go along with your GIF.")
             return
         }
+        // sends data to API
         const dataToSendToAPI = {
             title: usergifTitle,
             imageURL: usergifURL,

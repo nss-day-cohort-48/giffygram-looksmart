@@ -2,13 +2,11 @@ import { getUsers, sendUserToDatabase } from "../data/provider.js"
 
 export const registrationForm = () => {
     return `
-        <div>
+        <div class="registrationFlex">
             <div>
             Not a member?
             </div>
-
             <button id="registrationButton">Register here!</button>
-
         </div>
     `
 }
@@ -21,22 +19,33 @@ document.addEventListener("click", clickEvent => {
     }
 })
 
+// Event listener refreshes the page (renderApp())
+document.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "coverPBimage") {
+        document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
+    }
+})
+
 // HTML-producing component of registration events
 const registerMe = () => {
     return `
+    <div class="giffyFlex">
+        <img id="coverPBimage" src="../images/pb.png">
+        <article id="giffyLogo">Giffygram</article>
+    </div>
     <div class="registrationForm">
     <form>
-        <fieldset>
+        <fieldset class="registerInput">
             <label for="name">Full Name:</label>
-            <input type="text" class="name_input" name="fullname" autofocus placeholder="Full name" />
+            <input type="text" class="name_input" name="fullname" autofocus placeholder=" Full name" />
         </fieldset>
-        <fieldset>
+        <fieldset class="registerInput">
             <label for="email">Email:</label>
-            <input type="text" class="email_input" name="email" autofocus placeholder="Email address" />
+            <input type="text" class="email_input" name="email" autofocus placeholder=" Email address" />
         </fieldset>
-        <fieldset>
+        <fieldset class="registerInput">
             <label for="password">Create Password:</label>
-            <input type="password" class="password_input" name="password" placeholder="Create Password" />
+            <input type="password" class="password_input" name="password" placeholder=" Create Password" />
         </fieldset>
     </form>
     <button id="registerMe">Register me!</button>
@@ -51,22 +60,19 @@ document.addEventListener("click", clickEvent => {
         const email = document.querySelector("input[name='email']").value
         const password = document.querySelector("input[name='password']").value
 
-        // check to see whether user input data
-
+        // check to see whether user input data is blank
         if (userName === "") {
             const inputField = document.querySelector(".name_input")
             inputField.style.background = "#fc7878"
             alert("Please input data in all fields")
             return
         }
-
         if (email === "") {
             const inputField = document.querySelector(".email_input")
             inputField.style.background = "#fc7878"
             alert("Please input data in all fields")
             return
         }
-
         if (password === "") {
             const inputField = document.querySelector(".password_input")
             inputField.style.background = "#fc7878"
@@ -75,13 +81,11 @@ document.addEventListener("click", clickEvent => {
         }
 
         // check to see whether an account with these credentials already exists in database
-
         const usersArray = getUsers()
-
         for (let i = 0; i < usersArray.length; i++) {
             if (usersArray[i].name === userName || usersArray[i].email === email) {
                 alert("User with this name and/or email already exists in database")
-                document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
+                document.querySelector(".giffygram").innerHTML = registerMe()
                 return
             } 
         }

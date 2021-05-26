@@ -29,7 +29,8 @@ document.addEventListener("click", clickEvent => {
                 foundUser = user
             }
         }
-
+        // saves the userId in local storage in local memory (associated with Chrome)
+        // dispatches customEvent to eventListener on main ("stateChanged")
         if (foundUser !== null) {
             localStorage.setItem("gg_user", foundUser.id)
             document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
@@ -39,17 +40,21 @@ document.addEventListener("click", clickEvent => {
 
 export const LoginForm = () => {
     return `
+        <div class="giffyFlex">
+            <img id="coverPBimage" src="../images/pb.png">
+            <article id="giffyLogo">Giffygram</article>
+        </div>
         <div class="loginForm">
-            <form>
-                <fieldset>
-                    <label for="email">Email:</label>
-                    <input type="text" class="user_email" name="email" autofocus placeholder="Email address" />
-                </fieldset>
-                <fieldset>
-                    <label for="password">Password:</label>
-                    <input type="password" class="user_password" name="password" placeholder="Password" />
-                </fieldset>
-            </form>
+                <form class="registerFlex">
+                    <fieldset class="registerInput">
+                        <label for="email">Email:</label>
+                        <input type="text" class="user_email" name="email" autofocus placeholder=" Email address" />
+                    </fieldset>
+                    <fieldset class="registerInput">
+                        <label for="password">Password:</label>
+                        <input type="password" class="user_password" name="password" placeholder=" Password" />
+                    </fieldset>
+                </form>
             <button id="loginButton">Login</button>
         </div>
         ${registrationForm()}

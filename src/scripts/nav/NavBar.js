@@ -2,19 +2,29 @@ import { createMessageForm } from "../message/MessageForm.js"
 import { receivedMessages } from "../friends/DirectMessage.js"
 import { getMessages } from "../data/provider.js"
 
+// Counter for new messages display
 const newMessagesCount = () => {
     const messagesArray = getMessages()
     const userId = parseInt(localStorage.getItem("gg_user"))
-    const inbox = []
+    let inboxCount = 0
 
-    for (let i = 0; i < messagesArray.length; i++) {
-        if (messagesArray[i].recipientId === userId && messagesArray[i].read === false) {
-            inbox.push(messagesArray[i])
+    // equivalent loop to below
+    // iterates through the messagesArray and checks the recipientId and read properties
+    // for (let i = 0; i < messagesArray.length; i++) {
+    //     if (messagesArray[i].recipientId === userId && messagesArray[i].read === false) {
+    //         inboxCount++
+    //     }
+    // }
+
+    for (const message of messagesArray) {
+        if (message.recipientId === userId && message.read === false) {
+            inboxCount++
         }
     }
-    return inbox.length
+    return inboxCount
 }
 
+// HTML rendering function for the navigation bar at top
 export const NavBar = () => {
     return `
     <nav class="navigation">
@@ -29,6 +39,9 @@ export const NavBar = () => {
     `
 }
 
+// event listeners for click events on nav bar
+
+// logs user out by clearing userId from local storage and re-rendering
 document.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "logout_button") {
         localStorage.clear()
@@ -36,12 +49,21 @@ document.addEventListener("click", clickEvent => {
     }
 })
 
+// refreshes the page if you click on the peanut butter jar
+document.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "pbImage") {
+        document.querySelector(".giffygram").dispatchEvent(new CustomEvent("stateChanged"))
+    }
+})
+
+// reveals the send message form
 document.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "penImage") {
         document.querySelector(".messageBox").innerHTML = createMessageForm()
     }
 })
 
+// click event to open DM box
 document.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "messageBox") {
         document.querySelector(".DMBox").innerHTML = receivedMessages()

@@ -55,12 +55,10 @@ export const footer = () => {
             <option id="year17" name='footerYear'>2017</option>
     </select>
     </div>
-
     <div class="usersInFooter footer__item">
     <div class="footerWords">Posts by user</div>
     ${footerUsers()}
     </div>
-
     <div class="footerFavorites footer__item">
     <div class="favoritesText footerWords">Show only favorites</div>
     <input id="favoritesInFooter" type="checkbox">

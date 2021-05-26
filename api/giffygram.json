@@ -101,44 +101,13 @@
       "id": 9
     },
     {
-      "title": "",
-      "imageURL": "",
-      "description": "",
+      "title": "1",
+      "imageURL": "2",
+      "description": "3",
       "userId": 4,
-      "timestamp": "2021-05-24T20:21:29.090Z",
-      "id": 10
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-24T21:18:46.692Z",
-      "id": 11
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T14:38:27.698Z",
-      "id": 12
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T14:38:35.510Z",
-      "id": 13
-    },
-    {
-      "title": "",
-      "imageURL": "",
-      "description": "",
-      "userId": 4,
-      "timestamp": "2021-05-25T18:48:31.490Z",
+      "timestamp": "2021-05-26T16:36:52.545Z",
       "id": 14
+
     },
     {
       "title": "",
@@ -243,6 +212,7 @@
       "userId": 4,
       "timestamp": "2021-05-25T20:35:15.591Z",
       "id": 27
+
     }
   ],
   "likes": [
@@ -277,12 +247,7 @@
       "id": 12
     },
     {
-      "postId": 3,
-      "userId": 4,
-      "id": 15
-    },
-    {
-      "postId": 9,
+      "postId": 1,
       "userId": 4,
       "id": 16
     },
@@ -290,6 +255,8 @@
       "postId": 1,
       "userId": 4,
       "id": 17
+      "id": 13
+
     }
   ],
   "messages": [
@@ -442,16 +409,24 @@
     {
       "userId": 4,
       "text": "hi",
-      "recipientId": 4,
-      "read": true,
-      "id": 24
+      "recipientId": 1,
+      "read": false,
+      "id": 26
     },
     {
       "userId": 4,
-      "text": "hello",
+      "text": "hi",
+      "recipientId": 2,
+      "read": false,
+      "id": 27
+    },
+    {
+      "userId": 4,
+      "text": "hi",
       "recipientId": 4,
       "read": false,
       "id": 25
+      "id": 28
     }
   ],
   "follows": [

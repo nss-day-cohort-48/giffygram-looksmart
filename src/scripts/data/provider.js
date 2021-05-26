@@ -1,15 +1,7 @@
-import { receivedMessages } from "../friends/DirectMessage.js"
-
 const apiURL = "http://localhost:8088"
 const applicationElement = document.querySelector(".giffygram")
 
 let applicationState = {
-    currentUser: {},
-    feed: {
-        chosenUser: null,
-        displayFavorites: false,
-        displayMessages: false
-    },
     users: [],
     posts: [],
     likes: [],
@@ -88,19 +80,23 @@ export const sendGif = (userGifSubmission) => {
     })
 }
 
-
+export const deletePost = (id) => {
+    return fetch(`${apiURL}/posts/${id}`, { method: "DELETE"})
+        .then(
+            () => {
+                applicationElement.dispatchEvent(new CustomEvent("stateChanged"))
+            }
+                )}
 
 export const fetchLikes = () => {
-
     return fetch(`${apiURL}/likes`)
-
     .then(response => response.json())
     .then(likes =>{
         applicationState.likes = likes
     })
 }
 
-export const getLikes = (id) => {
+export const getLikes = () => {
     
     return [...applicationState.likes]
 }
@@ -113,7 +109,7 @@ export const sendFavorite = (userPostFavorite) => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(userPostFavorite)
-    }
+    } 
     return fetch(`${apiURL}/likes`, fetchOptions)
     .then(res => res.json()) 
     .then(() => {
@@ -121,7 +117,9 @@ export const sendFavorite = (userPostFavorite) => {
     })
 }
 
-//function to delete from favorites upon clicking star.
+
+//function to delete from favorites upon clicking star
+// passes in argument of LikeId
 export const favoriteDeleteRequest = (id) => {
     return fetch(`${apiURL}/likes/${id}`, {method:"DELETE"})
     .then(
@@ -130,7 +128,6 @@ export const favoriteDeleteRequest = (id) => {
         }
     )
 }
-
 
 
 export const fetchMessages = () => {
@@ -161,6 +158,9 @@ export const getFollows = () => {
     return[...applicationState.follows]
 }
 
+// Patch fetch call: allows you to change the properties of an object in your database
+// here, this call changes the 'read' property of an object in messages database of a certain id (line 167)
+// then this function dispatches new CustomEvent to re-render site with DM box appearing
 export const markMessageAsRead = (messageId) => {
     return fetch(`${apiURL}/messages/${messageId}`,
     {
@@ -177,10 +177,14 @@ export const markMessageAsRead = (messageId) => {
     )
 }
 
+
+// fetch call to delete object from database
+// CustomEvent2 re-renders the site with the DM box appearing
 export const deleteMessage = (id) => {
     return fetch(`${apiURL}/messages/${id}`, { method: "DELETE"})
         .then(
             () => {
                 applicationElement.dispatchEvent(new CustomEvent("stateChanged2"))
             }
-                )}
+        )
+    }

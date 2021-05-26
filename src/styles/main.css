@@ -5,6 +5,8 @@
 @import 'updates.css';
 @import 'message.css';
 @import url("https://fonts.googleapis.com/css?family=Comfortaa|Patua+One");
+@import 'login.css';
+
 /*Typography
 --------------------------------------------------------------*/
 
@@ -52,9 +54,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
-.loginForm {
-    margin: 0 25%;
-}
 
 #logo {
     cursor: pointer;
