@@ -1,3 +1,12 @@
+.asideWall {
+    position: fixed;
+    margin-left: 40rem;
+}
+
+/* .messageBox {
+    position: fixed;
+} */
+
 .DMTopflex {
     display: flex;
     flex-flow: row wrap;
