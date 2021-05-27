@@ -17,14 +17,16 @@
     background-color: white;
 }
 #submitGif {
+    margin-top: 5px;
     background-color: black;
-    background-image: url("https://lh3.googleusercontent.com/proxy/SPheUmY4dsKDQIcn1ikQdveJQMrv4CBA0T0G_d_TsR0dARlgTCMr0RiJRxLgZE2b1w6rlmTTA7kWvO99ypWWNWzjgu52ITc");
+    background-image: url("https://www.clipartmax.com/png/small/1-11037_green-check-mark-transparent.png");
     background-size: 100%;
-    height: 3.5rem;
+    height: 4rem;
     width: 4rem;
 }
 
 #cancelGif {
+    margin-left: 54px;
     background-color: black;
     background-image: url("https://e1.pngegg.com/pngimages/720/726/png-clipart-emoji-sticker-x-icon-thumbnail.png");
     background-size: 100%;
