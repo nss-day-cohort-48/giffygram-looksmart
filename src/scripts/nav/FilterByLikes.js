@@ -28,10 +28,6 @@ export const filterByLikes= () => {
         for (const post of posts) {
             if (like.postId === post.id) {
                 filteredPosts.push(post)
-    for (let i = 0; i < filteredLikes.length; i++) {
-        for(let n = 0; n < posts.length; n++) {
-            if (filteredLikes[i].postId === posts[n].id) {
-                filteredPosts.push(posts[n])
             }
         }
     }

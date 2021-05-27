@@ -25,11 +25,11 @@ export const PostList = () => {
             let newDate = post.timestamp;
             let upDate = new Date(newDate).toLocaleDateString(`en-US`);
 
-            /*iterate through the userLikes array using the find method. This will return
-            the first object of the userLikes arrary where the value of the postId 
-            of the individual likedPost object is equal to the value of the id key 
-            of the currently mapped post object. If no object is found that matches,
-            find will return undefined. */
+            /*Iterate through the entire userLikes array using the find method to see if the
+            postId is equal the id of the first object of the post array we're currently mapping. 
+            This will return the object from the userLikes array where postId === post.id of the mapped
+            posts array, but we don't care about that in thise case. If no object is found that matches,
+            find will return undefined, which is what we need. */
             const findFavorite = userLikes.find(likedPost => {
                 return (likedPost.postId === post.id)
             })
