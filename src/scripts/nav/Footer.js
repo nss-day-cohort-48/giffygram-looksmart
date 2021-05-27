@@ -2,6 +2,7 @@ import { filterWallByYear } from "../nav/FilterByYear.js"
 import {footerUsers, filterWallByUser} from "../nav/FilterByUser.js"
 import { filterByLikes } from "../nav/FilterByLikes.js"
 import { PostList } from "../feed/PostList.js"
+import { getPosts } from "../data/provider.js"
 
 const mainContainer = document.querySelector(".giffygram")
 
@@ -32,10 +33,11 @@ mainContainer.addEventListener(
     "click",
     (event) => {
         if (event.target.id === "favoritesInFooter") {
-            if (event.target.checked === true) {
+            if (event.target.checked != false) {
                 document.querySelector("#postingWall").innerHTML = filterByLikes()
             } else {
-                document.querySelector("#postingWall").innerHTML = PostList()
+                const posts = getPosts()
+                document.querySelector("#postingWall").innerHTML = PostList(posts)
             }
         }
     }

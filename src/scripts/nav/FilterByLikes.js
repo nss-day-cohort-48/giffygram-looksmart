@@ -1,4 +1,5 @@
-import {getUsers, getPosts, getLikes} from "../data/provider.js"
+import {getPosts, getLikes} from "../data/provider.js"
+import { PostList } from "../feed/PostList.js"
 
 export const filterByLikes= () => {
     
@@ -14,7 +15,8 @@ export const filterByLikes= () => {
             filteredLikes.push(likes[i])
         }
     }
-    //Pulling out postId into filteredPosts ()
+    // this loop checks, for each like, the whole posts array; 
+    // if there is an id match, it adds that post to a new array (filteredPosts)
     // for (let i = 0; i < filteredLikes.length; i++) {
     //     for(let n = 0; n < posts.length; n++) {
     //         if (filteredLikes[i].postId === posts[n].id) {
@@ -31,33 +33,6 @@ export const filterByLikes= () => {
             }
         }
     }
- 
-    const usersArray = getUsers()
-    let html = "<div id='postingWall'>"
-    html += `
-    ${filteredPosts.map(
-        post => {
-            let posterName = "..."
-            for (let i = 0; i < usersArray.length; i++) {
-                if (post.userId === usersArray[i].id) {
-                    posterName = usersArray[i].name
-                }
-            }
-            const postDate = (new Date(post.timestamp)).toLocaleDateString('en-US')
-            const starImage = './images/favorite-star-yellow.svg'
-            const altText = 'yellow star'
-
-
-            return `
-                <h2>${post.title}</h2>
-                <img src="${post.imageURL}">
-                <div> ${post.description} </div>
-                <div> Posted by ${posterName} on ${postDate} </div>
-                <img class="actionIcon" id="favoritePost--${post.id}" src=${starImage} alt=${altText} />
-                `
-            }
-        ).join("\n")}
-    `
-    html += "</div>"
-    return html
+    const filteredWall = PostList(filteredPosts)
+    return filteredWall
 }

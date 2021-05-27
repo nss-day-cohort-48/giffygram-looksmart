@@ -31,6 +31,50 @@
     height: 4rem;
     width: 4rem;
 }
+
+#postingWall {
+    margin-bottom: 5rem;
+    margin-left: 2rem;
+}
+
+.individPost {
+    background-color: whitesmoke;
+    border: lightblue 1px solid;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    border-radius: 10px;
+    width: 30rem;
+}
+
+.postGIF {
+    width: 30rem;
+}
+
+.postDescript {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: lightcoral;
+    border: lightblue 1px solid;
+    border-radius: 10px;
+    text-align: justify;
+}
+
+.postedByFlex {
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-between;
+    padding-bottom: -4rem;
+    padding-right: 1rem;
+}
+
+.postedBy {
+    text-decoration: underline;
+    padding-left: 1rem;
+    padding-top: .4rem;
+}
+
+
 /* .miniMode {
     padding: 1rem;
     margin: 0 25%;
