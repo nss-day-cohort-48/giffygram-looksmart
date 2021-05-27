@@ -77,12 +77,6 @@
       "id": 4
     },
     {
-      "gifTitle": "Test",
-      "gifURL": "https://cdn.vox-cdn.com/thumbor/a5EcHSnHLRfQyzSFvhmPSnibCq0=/0x0:420x314/1400x1400/filters:focal(136x115:202x181):format(gif)/cdn.vox-cdn.com/uploads/chorus_image/image/55279403/tenor.0.gif",
-      "gifStory": "Hello",
-      "id": 6
-    },
-    {
       "title": "Test once more",
       "imageURL": "https://hips.hearstapps.com/pop.h-cdn.co/assets/17/24/1497533116-not-dead.gif?crop=0.8166666666666667xw:1xh;center,top&resize=640:*",
       "description": "123",
@@ -147,16 +141,6 @@
       "id": 12
     },
     {
-      "postId": 3,
-      "userId": 4,
-      "id": 16
-    },
-    {
-      "postId": 3,
-      "userId": 4,
-      "id": 15
-    },
-    {
       "postId": 14,
       "userId": 1,
       "id": 16
@@ -182,9 +166,14 @@
       "id": 20
     },
     {
-      "postId": 6,
+      "postId": 14,
       "userId": 4,
-      "id": 23
+      "id": 21
+    },
+    {
+      "postId": 9,
+      "userId": 4,
+      "id": 22
     }
   ],
   "messages": [
