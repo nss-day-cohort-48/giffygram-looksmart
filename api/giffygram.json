@@ -41,6 +41,18 @@
       "email": "alexander.lambrow@gmail.com",
       "password": "poo",
       "id": 7
+    },
+    {
+      "name": "Me",
+      "email": "me@me.com",
+      "password": "poo",
+      "id": 8
+    },
+    {
+      "name": "Alex",
+      "email": "aaa@de.de",
+      "password": "aaa",
+      "id": 9
     }
   ],
   "posts": [
@@ -166,14 +178,24 @@
       "id": 20
     },
     {
-      "postId": 14,
+      "postId": 2,
       "userId": 4,
-      "id": 21
+      "id": 24
     },
     {
-      "postId": 9,
+      "postId": 1,
       "userId": 4,
-      "id": 22
+      "id": 25
+    },
+    {
+      "postId": 3,
+      "userId": 4,
+      "id": 26
+    },
+    {
+      "postId": 14,
+      "userId": 4,
+      "id": 27
     }
   ],
   "messages": [
@@ -326,23 +348,30 @@
     {
       "userId": 4,
       "text": "hi",
-      "recipientId": 4,
-      "read": true,
-      "id": 24
-    },
-    {
-      "userId": 4,
-      "text": "hi",
       "recipientId": 2,
       "read": false,
       "id": 27
     },
     {
       "userId": 4,
-      "text": "hi",
-      "recipientId": 4,
+      "text": "hiii",
+      "recipientId": 3,
       "read": false,
-      "id": 25
+      "id": 28
+    },
+    {
+      "userId": 9,
+      "text": "hey",
+      "recipientId": 3,
+      "read": false,
+      "id": 29
+    },
+    {
+      "userId": 9,
+      "text": "eeee",
+      "recipientId": 9,
+      "read": true,
+      "id": 30
     }
   ],
   "follows": [

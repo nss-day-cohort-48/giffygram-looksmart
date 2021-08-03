@@ -33,7 +33,7 @@ mainContainer.addEventListener(
     "click",
     (event) => {
         if (event.target.id === "favoritesInFooter") {
-            if (event.target.checked != false) {
+            if (event.target.checked == true) {
                 document.querySelector("#postingWall").innerHTML = filterByLikes()
             } else {
                 const posts = getPosts()
